@@ -18,10 +18,14 @@ public class PlayerController : MonoBehaviour
     public Transform feetpos;
     public float checkRadious;
     public LayerMask whatIsGround;
-    private bool hasEntered;
+   
+   public VectorValue pos;
+
+    private Animator anim;
 
     private void Start()
     {
+        transform.position = pos.initValue;
         rb = GetComponent<Rigidbody2D>();
     }
 
