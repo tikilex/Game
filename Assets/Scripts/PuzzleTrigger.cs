@@ -6,7 +6,7 @@ public class PuzzleTrigger : MonoBehaviour
 {
     public Animator animator;
     public GameObject puzzle;
-    public GameObject Scene;
+    public GameObject[] Scene;
 
     private void OnTriggerEnter2D(Collider2D other)
     {
