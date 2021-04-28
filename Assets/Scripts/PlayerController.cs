@@ -22,11 +22,13 @@ public class PlayerController : MonoBehaviour
    public VectorValue pos;
 
     private Animator anim;
+    
 
     private void Start()
     {
         transform.position = pos.initValue;
         rb = GetComponent<Rigidbody2D>();
+        anim=GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -42,6 +44,12 @@ public class PlayerController : MonoBehaviour
         if (facingRight == true && moveInput < 0)
         {
             Flip();
+        }
+        if(moveInput==0)
+        {
+            anim.SetBool("IsRunning",false);
+        }else{
+            anim.SetBool("IsRunning",true);
         }
     }
 
