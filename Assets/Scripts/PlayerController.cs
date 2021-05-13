@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public float jumpForce;
-    private float moveInput;
+    public float moveInput;
 
     public Joystick joystick;
 
@@ -21,14 +21,17 @@ public class PlayerController : MonoBehaviour
    
    public VectorValue pos;
 
-    private Animator anim;
+    public Animator animator;
+    
+
+    
     
 
     private void Start()
     {
         transform.position = pos.initValue;
         rb = GetComponent<Rigidbody2D>();
-        anim=GetComponent<Animator>();
+        animator = GetComponent<Animator>();
     }
 
     private void FixedUpdate()
@@ -45,18 +48,25 @@ public class PlayerController : MonoBehaviour
         {
             Flip();
         }
-        if(moveInput==0)
+        if(moveInput == 0)
         {
-            anim.SetBool("IsRunning",false);
-        }else{
-            anim.SetBool("IsRunning",true);
-        }
+            animator.SetBool("isRunning", false);
+        } 
+        else{
+            animator.SetBool("isRunning", true);
+            }
     }
 
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(feetpos.position, checkRadious, whatIsGround);
-        
+        if(isGrounded == true)
+        {
+            animator.SetBool("isJumping", false);
+        }
+        else{
+            animator.SetBool("isJumping", true);
+        }
     }
     
     public void OnJumpButtonDown()
