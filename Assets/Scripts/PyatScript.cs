@@ -10,14 +10,19 @@ public class PyatScript : MonoBehaviour
     private Camera _camera;
     [SerializeField] private TilesScript[] tiles;
     private int emptySpaceIndex = 15;
-    private bool _isFinished;
+    public bool _isFinished;
     [SerializeField] private GameObject endPanel;
     [SerializeField] private Text endPanelTimeText;
+    public int levelToLoad;
+    public Vector2 position;
+    public VectorValue playerStorage;
+    
 
     void Start()
     {
         _camera = Camera.main;
         Shuffle();
+    
     }
 
     
@@ -68,8 +73,13 @@ public class PyatScript : MonoBehaviour
 
     public void PlayAgain()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+       playerStorage.initValue = position;
+        SceneManager.UnloadSceneAsync(3);
     }
+    
+    
+
+    
 
     public void Shuffle() 
     {

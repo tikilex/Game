@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class LevelChanger : MonoBehaviour
 {
+
     private Animator animator;
     public int levelToLoad;
 
@@ -14,12 +15,21 @@ public class LevelChanger : MonoBehaviour
 
     public Slider slider;
     public GameObject loadingScreen;
+    public PuzzleTrigger _isFinished;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+   {
+       if(other.tag == "Player")
+       {
+           SceneManager.LoadSceneAsync(levelToLoad);
+           StartCoroutine(LoadingScreenOnFade());
+       }
+   }
     public void FadeToLevel()
     {
         animator.SetTrigger("fade");
@@ -40,5 +50,7 @@ public class LevelChanger : MonoBehaviour
            yield return null;
         }
     }
+    
+    
 
 }

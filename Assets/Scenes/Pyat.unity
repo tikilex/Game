@@ -1572,8 +1572,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   emptySpace: {fileID: 0}
   tiles: []
+  _isFinished: 0
   endPanel: {fileID: 0}
   endPanelTimeText: {fileID: 0}
+  levelToLoad: 2
+  position: {x: 23.78, y: 10.61}
+  playerStorage: {fileID: 11400000, guid: dfa22d128591d154fbdefb461de8a47b, type: 2}
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0
@@ -1676,8 +1680,12 @@ MonoBehaviour:
   - {fileID: 246348937}
   - {fileID: 2081504326}
   - {fileID: 0}
+  _isFinished: 0
   endPanel: {fileID: 1780362152}
   endPanelTimeText: {fileID: 613399110}
+  levelToLoad: 2
+  position: {x: 23.78, y: 10.61}
+  playerStorage: {fileID: 11400000, guid: dfa22d128591d154fbdefb461de8a47b, type: 2}
 --- !u!1 &520986954
 GameObject:
   m_ObjectHideFlags: 0
@@ -1959,12 +1967,24 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 519420030}
-        m_TargetAssemblyTypeName: 
+        m_TargetAssemblyTypeName: PyatScript, Assembly-CSharp
         m_MethodName: PlayAgain
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: PyatScript, Assembly-CSharp
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -3129,7 +3149,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_TargetDisplay: 0
 --- !u!224 &1028983177
 RectTransform:
@@ -4683,7 +4703,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Try Again
+  m_Text: Exit
 --- !u!222 &1710984660
 CanvasRenderer:
   m_ObjectHideFlags: 0

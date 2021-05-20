@@ -12,6 +12,7 @@ public class ExitTrigger : MonoBehaviour
     private Animator animator;
     public Slider slider;
     public GameObject loadingScreen;
+    public int levelToLoad;
 
     private void Start()
     {
@@ -26,14 +27,14 @@ public class ExitTrigger : MonoBehaviour
    {
        if(other.tag == "Player")
        {
-           SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+           SceneManager.LoadSceneAsync(levelToLoad);
            StartCoroutine(LoadingScreenOnFade());
        }
 
    }
    IEnumerator LoadingScreenOnFade()
     {
-        AsyncOperation operation = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex+1);
+        AsyncOperation operation = SceneManager.LoadSceneAsync(levelToLoad);
         loadingScreen.SetActive(true);
         while(!operation.isDone)
         {
