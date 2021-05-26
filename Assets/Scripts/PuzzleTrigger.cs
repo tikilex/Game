@@ -12,8 +12,7 @@ public class PuzzleTrigger : MonoBehaviour
     public GameObject puzzle;
     public bool _isFinished = false;
     public int levelToLoad;
-    private bool Saved;
-    private GameObject A;
+    public GameObject Canvas;
     
    
 
@@ -21,16 +20,17 @@ public class PuzzleTrigger : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-         SceneManager.LoadSceneAsync(levelToLoad,LoadSceneMode.Additive);
+            SceneManager.LoadSceneAsync(levelToLoad,LoadSceneMode.Additive);
           _isFinished=true;
         }
     }
     public void FixedUpdate()
-    {if(_isFinished == true)
-    {
+    {if (_isFinished == true)
+        {
+            
             animator.SetBool("isFinished", true);
             anim.SetTrigger("isTriggered");
-    }
+        }
     }
     }
    

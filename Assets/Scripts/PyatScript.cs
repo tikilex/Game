@@ -22,7 +22,8 @@ public class PyatScript : MonoBehaviour
     {
         _camera = Camera.main;
         Shuffle();
-    
+        
+
     }
 
     
@@ -75,6 +76,7 @@ public class PyatScript : MonoBehaviour
     {
        playerStorage.initValue = position;
         SceneManager.UnloadSceneAsync(3);
+        
     }
     
     

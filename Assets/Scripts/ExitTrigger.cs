@@ -27,7 +27,7 @@ public class ExitTrigger : MonoBehaviour
    {
        if(other.tag == "Player")
        {
-           SceneManager.LoadSceneAsync(levelToLoad);
+           SceneManager.LoadSceneAsync(levelToLoad++);
            StartCoroutine(LoadingScreenOnFade());
        }
 
