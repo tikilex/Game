@@ -74,8 +74,7 @@ public class PyatScript : MonoBehaviour
 
     public void PlayAgain()
     {
-       playerStorage.initValue = position;
-        SceneManager.UnloadSceneAsync(3);
+        SceneManager.UnloadSceneAsync(4);
         
     }
     

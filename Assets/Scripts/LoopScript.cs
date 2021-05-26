@@ -167,8 +167,8 @@ public class LoopScript : MonoBehaviour
         
     }
 
-    public void NextLevel(string nextLevel)
+    public void NextLevel()
     {
-        SceneManager.LoadScene(nextLevel);
+        SceneManager.UnloadSceneAsync(6);
     }
 }

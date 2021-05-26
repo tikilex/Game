@@ -17,4 +17,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SceneThree.unity
     guid: 65df912770f713548a5f5e3469459c57
+  - enabled: 1
+    path: Assets/Scenes/Pyat.unity
+    guid: 36cadd9ced10df94d889a55db05a5e25
+  - enabled: 1
+    path: Assets/Scenes/SceneFour.unity
+    guid: 6ec1dd5e05c33e140b5975e6dd38f883
+  - enabled: 1
+    path: Assets/Scenes/Loop.unity
+    guid: 0e45b79a6ff79b24f957fe008efa6b93
   m_configObjects: {}

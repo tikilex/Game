@@ -152,6 +152,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ad32b57dcf01354b8335abd6316c56a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slider: {fileID: 0}
+  loadingScreen: {fileID: 0}
+  levelToLoad: 0
 --- !u!1 &9105128496509668862
 GameObject:
   m_ObjectHideFlags: 0
