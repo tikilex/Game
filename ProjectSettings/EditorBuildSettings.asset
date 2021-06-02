@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Loop.unity
     guid: 0e45b79a6ff79b24f957fe008efa6b93
+  - enabled: 1
+    path: Assets/Scenes/SceneFive.unity
+    guid: f0270a85ce091c942a9b487317d3acec
   m_configObjects: {}

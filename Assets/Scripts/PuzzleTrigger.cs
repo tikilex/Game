@@ -22,6 +22,7 @@ public class PuzzleTrigger : MonoBehaviour
         {
             SceneManager.LoadSceneAsync(levelToLoad,LoadSceneMode.Additive);
           _isFinished=true;
+          
         }
     }
     public void FixedUpdate()
