@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class DigitalDisplay : MonoBehaviour
 
@@ -59,6 +60,10 @@ public class DigitalDisplay : MonoBehaviour
                 case "Six":
                     codeSequence += "6";
                     DisplayCodeSequence(6);
+                    break;
+                case "Seven":
+                    codeSequence += "7";
+                    DisplayCodeSequence(7);
                     break;
                 case "Eight":
                     codeSequence += "8";
@@ -121,7 +126,7 @@ public class DigitalDisplay : MonoBehaviour
     {
         if(codeSequence == "3228")
         {
-            Debug.Log("Correct!");
+            SceneManager.UnloadSceneAsync(8);
         }
         else
         {
