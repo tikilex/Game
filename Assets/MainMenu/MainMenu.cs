@@ -5,25 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class MainMenu : MonoBehaviour
 {
-   
-   public void PlayGame1()
+    public void PlayGame(int Level)
     {
-        SceneManager.LoadScene(1);
-    }
-
-    public void PlayGame2()
-    {
-        SceneManager.LoadScene(2);
-    }
-
-    public void PlayGame3()
-    {
-        SceneManager.LoadScene(3);
-    }
-
-    public void PlayGame4()
-    {
-        SceneManager.LoadScene(5);
+        SceneManager.LoadScene(Level);
     }
 
     public void ExitGame()

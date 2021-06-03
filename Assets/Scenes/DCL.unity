@@ -155,7 +155,7 @@ RectTransform:
   m_GameObject: {fileID: 119675265}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children: []
   m_Father: {fileID: 523623697}
   m_RootOrder: 11
@@ -273,9 +273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6591b1946aa92274b827905ee36009c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deviderPosition: 0
-  buttonName: 
-  buttonValue: 
 --- !u!114 &119675272
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -424,7 +421,7 @@ RectTransform:
   m_GameObject: {fileID: 165256447}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 133620484}
   m_RootOrder: 1
@@ -504,7 +501,7 @@ RectTransform:
   m_GameObject: {fileID: 467496817}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children: []
   m_Father: {fileID: 523623697}
   m_RootOrder: 8
@@ -622,9 +619,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6591b1946aa92274b827905ee36009c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deviderPosition: 0
-  buttonName: 
-  buttonValue: 
 --- !u!114 &467496824
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -767,7 +761,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 400, y: 190}
+  m_AnchoredPosition: {x: 400, y: 159.2}
   m_SizeDelta: {x: 160, y: 224}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &523623698
@@ -839,7 +833,7 @@ RectTransform:
   m_GameObject: {fileID: 553642923}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children: []
   m_Father: {fileID: 523623697}
   m_RootOrder: 9
@@ -957,9 +951,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6591b1946aa92274b827905ee36009c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deviderPosition: 0
-  buttonName: 
-  buttonValue: 
 --- !u!114 &553642930
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1003,7 +994,7 @@ RectTransform:
   m_GameObject: {fileID: 620233774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children: []
   m_Father: {fileID: 523623697}
   m_RootOrder: 5
@@ -1121,9 +1112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6591b1946aa92274b827905ee36009c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deviderPosition: 0
-  buttonName: 
-  buttonValue: 
 --- !u!114 &620233781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1167,7 +1155,7 @@ RectTransform:
   m_GameObject: {fileID: 906390781}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children: []
   m_Father: {fileID: 523623697}
   m_RootOrder: 3
@@ -1285,9 +1273,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6591b1946aa92274b827905ee36009c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deviderPosition: 0
-  buttonName: 
-  buttonValue: 
 --- !u!114 &906390788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1397,7 +1382,7 @@ RectTransform:
   m_GameObject: {fileID: 990443066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children: []
   m_Father: {fileID: 523623697}
   m_RootOrder: 10
@@ -1515,9 +1500,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6591b1946aa92274b827905ee36009c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deviderPosition: 0
-  buttonName: 
-  buttonValue: 
 --- !u!114 &990443073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1561,7 +1543,7 @@ RectTransform:
   m_GameObject: {fileID: 1135368291}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children: []
   m_Father: {fileID: 523623697}
   m_RootOrder: 7
@@ -1679,9 +1661,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6591b1946aa92274b827905ee36009c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deviderPosition: 0
-  buttonName: 
-  buttonValue: 
 --- !u!114 &1135368298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1823,7 +1802,7 @@ RectTransform:
   m_GameObject: {fileID: 1324002006}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children: []
   m_Father: {fileID: 523623697}
   m_RootOrder: 0
@@ -1956,7 +1935,7 @@ RectTransform:
   m_GameObject: {fileID: 1440963948}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 133620484}
   m_RootOrder: 0
@@ -2032,7 +2011,7 @@ RectTransform:
   m_GameObject: {fileID: 1495282711}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 133620484}
   m_RootOrder: 3
@@ -2112,7 +2091,7 @@ RectTransform:
   m_GameObject: {fileID: 1726238708}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children: []
   m_Father: {fileID: 523623697}
   m_RootOrder: 4
@@ -2229,9 +2208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6591b1946aa92274b827905ee36009c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deviderPosition: 0
-  buttonName: 
-  buttonValue: 
 --- !u!114 &1726238715
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2271,7 +2247,7 @@ RectTransform:
   m_GameObject: {fileID: 1890515118}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children: []
   m_Father: {fileID: 133620484}
   m_RootOrder: 2
@@ -2351,7 +2327,7 @@ RectTransform:
   m_GameObject: {fileID: 1933648112}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children: []
   m_Father: {fileID: 523623697}
   m_RootOrder: 1
@@ -2469,9 +2445,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6591b1946aa92274b827905ee36009c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deviderPosition: 0
-  buttonName: 
-  buttonValue: 
 --- !u!114 &1933648119
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2515,7 +2488,7 @@ RectTransform:
   m_GameObject: {fileID: 1957304428}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children: []
   m_Father: {fileID: 523623697}
   m_RootOrder: 6
@@ -2633,9 +2606,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6591b1946aa92274b827905ee36009c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deviderPosition: 0
-  buttonName: 
-  buttonValue: 
 --- !u!114 &1957304435
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2679,7 +2649,7 @@ RectTransform:
   m_GameObject: {fileID: 2051898175}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children: []
   m_Father: {fileID: 523623697}
   m_RootOrder: 2
@@ -2797,9 +2767,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6591b1946aa92274b827905ee36009c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deviderPosition: 0
-  buttonName: 
-  buttonValue: 
 --- !u!114 &2051898182
 MonoBehaviour:
   m_ObjectHideFlags: 0

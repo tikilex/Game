@@ -126,6 +126,7 @@ public class DigitalDisplay : MonoBehaviour
     {
         if(codeSequence == "3228")
         {
+            Debug.Log("Correct!");
             SceneManager.UnloadSceneAsync(8);
         }
         else
