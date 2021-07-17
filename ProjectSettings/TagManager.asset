@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Pyat
+  - floatPlatform
+  - physicbox
   layers:
   - Default
   - TransparentFX
@@ -36,7 +38,7 @@ TagManager:
   - 
   - 
   - 
-  - 
+  - confider
   - Background
   m_SortingLayers:
   - name: Default

@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/DCL.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/SceneSix.unity
+    guid: 79fd78f68c2d2cf4a8acbb17e92915fe
   m_configObjects: {}

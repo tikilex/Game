@@ -1,0 +1,17 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Physicbox : MonoBehaviour
+{
+ void OnCollisionEnter2D(Collision2D col)
+    {
+        if (col.transform.tag == "floatPlatform") //передаем персонажу скорость движущихся платформ
+            transform.parent = col.transform;
+    }
+    void OnCollisionExit2D(Collision2D col)
+    {
+        if (col.transform.tag == "floatPlatform") //убираем у персонажа скорость платформы
+            transform.parent = null;
+    }
+}
