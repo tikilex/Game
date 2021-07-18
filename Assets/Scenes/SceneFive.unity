@@ -2723,7 +2723,7 @@ PrefabInstance:
     - target: {fileID: 9105128496509668863, guid: 84bf5c0b0f2706f40ae6d8a501336321,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.64715445
+      value: 1.26
       objectReference: {fileID: 0}
     - target: {fileID: 9105128496509668863, guid: 84bf5c0b0f2706f40ae6d8a501336321,
         type: 3}
@@ -2808,7 +2808,7 @@ GameObject:
   - component: {fileID: 1621161671}
   - component: {fileID: 1621161672}
   m_Layer: 30
-  m_Name: confider
+  m_Name: confiner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2856,7 +2856,7 @@ PolygonCollider2D:
     - - {x: 33.359398, y: 33.560364}
       - {x: -24.621786, y: 36.335842}
       - {x: -23.812449, y: -10.480076}
-      - {x: 98.868164, y: -10.244048}
+      - {x: 97.98141, y: -10.175837}
       - {x: 98.0329, y: 25.278622}
 --- !u!224 &1665527365 stripped
 RectTransform:

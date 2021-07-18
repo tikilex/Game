@@ -1336,7 +1336,7 @@ GameObject:
   - component: {fileID: 1014914914}
   - component: {fileID: 1014914915}
   m_Layer: 30
-  m_Name: confider
+  m_Name: confiner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1381,11 +1381,12 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 33.827915, y: 37.07424}
+    - - {x: 33.643578, y: 38.180264}
       - {x: -38.641304, y: 38.49269}
       - {x: -38.602272, y: -20.185896}
-      - {x: 134.63585, y: -20.10393}
-      - {x: 135.7485, y: 33.946186}
+      - {x: 118.76945, y: -19.112993}
+      - {x: 118.80512, y: -18.291193}
+      - {x: 118.90551, y: 35.734127}
 --- !u!1 &1059828517
 GameObject:
   m_ObjectHideFlags: 0
@@ -3206,7 +3207,7 @@ PrefabInstance:
     - target: {fileID: 7482958984758577806, guid: 7187c689b2ed8ad4da81cf09052382c8,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 7482958984758577806, guid: 7187c689b2ed8ad4da81cf09052382c8,
         type: 3}
