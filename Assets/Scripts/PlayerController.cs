@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public float jumpForce;
     public float moveInput;
+    public float moveInputKeyboard;
 
     public Joystick joystick;
 
@@ -37,24 +38,34 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         moveInput = joystick.Horizontal;
+        moveInputKeyboard = Input.GetAxis ("Horizontal");//Прекрепил W/A и горизантальные стрелки через юнити
+    
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+        if (moveInputKeyboard != 0)
+        {
+        rb.velocity = new Vector2(moveInputKeyboard * speed, rb.velocity.y);
+        }
         Console.WriteLine(moveInput);
-        if (facingRight == false && moveInput > 0)
+        if (facingRight == false && (moveInput > 0 || moveInputKeyboard > 0))
         {
             Flip();
         }
 
-        if (facingRight == true && moveInput < 0)
+        if (facingRight == true && (moveInput < 0 || moveInputKeyboard < 0))
         {
             Flip();
         }
-        if(moveInput == 0)
+        if(moveInput == 0 && moveInputKeyboard == 0)
         {
             animator.SetBool("isRunning", false);
-        } 
-        else{
+        }
+        if(moveInput != 0 || moveInputKeyboard != 0)  
+        {
             animator.SetBool("isRunning", true);
-            }
+        }
+        if (Input.GetButton("Jump") == true ){
+            OnJumpButtonDown();
+        }
     }
 
     void Update()
