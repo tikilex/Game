@@ -45,24 +45,25 @@ public class PlayerController : MonoBehaviour
         {
         rb.velocity = new Vector2(moveInputKeyboard * speed, rb.velocity.y);
         }
-        Console.WriteLine(moveInput);
+        //Console.WriteLine(moveInput);
+
         if (facingRight == false && (moveInput > 0 || moveInputKeyboard > 0))
         {
             Flip();
         }
-
         if (facingRight == true && (moveInput < 0 || moveInputKeyboard < 0))
         {
             Flip();
-        }
-        if(moveInput == 0 && moveInputKeyboard == 0)
-        {
-            animator.SetBool("isRunning", false);
         }
         if(moveInput != 0 || moveInputKeyboard != 0)  
         {
             animator.SetBool("isRunning", true);
         }
+        else
+        {
+            animator.SetBool("isRunning", false);
+        }
+
         if (Input.GetButton("Jump") == true ){
             OnJumpButtonDown();
         }
