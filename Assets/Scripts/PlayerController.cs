@@ -106,5 +106,15 @@ public class PlayerController : MonoBehaviour
         if (col.transform.tag == "floatPlatform") //убираем у персонажа скорость платформы
             transform.parent = null;
     }
+    void OnCollisionBoxEnter2D(Collision2D col)
+    {
+        if (col.transform.tag == "physicbox") //передаем персонажу скорость блока
+            transform.parent = col.transform;
+    }
+    void OnCollisionBoxExit2D(Collision2D col)
+    {
+        if (col.transform.tag == "physicbox") //убираем у персонажа скорость блока
+            transform.parent = null;
+    }
 }
 
