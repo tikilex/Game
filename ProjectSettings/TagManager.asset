@@ -9,6 +9,7 @@ TagManager:
   - physicbox
   - Piece
   - Killzone
+  - SpawnPhysicbox
   layers:
   - Default
   - TransparentFX

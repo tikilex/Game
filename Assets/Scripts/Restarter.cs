@@ -12,6 +12,15 @@ namespace UnityStandardAssets._2D
             {
                 SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
             }
+             if (other.tag == "SpawnPhysicbox")
+            {
+                   Destroy(other.gameObject);
+                   GlobalValues.CubeAlive = false;
+            }
+            if (other.tag == "physicbox")
+            {
+                   Destroy(other.gameObject);
+            }
         }
     }
 }
