@@ -74,7 +74,7 @@ public class PyatScript : MonoBehaviour
 
     public void PlayAgain()
     {
-        SceneManager.UnloadSceneAsync(4);
+        SceneManager.UnloadSceneAsync(8);
         
     }
     
