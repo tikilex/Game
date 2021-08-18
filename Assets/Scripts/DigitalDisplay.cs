@@ -128,6 +128,7 @@ public class DigitalDisplay : MonoBehaviour
         {
             Debug.Log("Correct!");
             SceneManager.UnloadSceneAsync(10);
+            GlobalValues.canMove=true;
         }
         else
         {

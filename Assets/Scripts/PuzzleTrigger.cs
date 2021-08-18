@@ -22,13 +22,13 @@ public class PuzzleTrigger : MonoBehaviour
         {
             SceneManager.LoadSceneAsync(levelToLoad,LoadSceneMode.Additive);
           _isFinished=true;
-          
+          GlobalValues.canMove=false; 
         }
     }
     public void FixedUpdate()
-    {if (_isFinished == true)
+    {
+        if (_isFinished == true)
         {
-            
             animator.SetBool("isFinished", true);
             anim.SetTrigger("isTriggered");
         }

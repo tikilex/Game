@@ -5,4 +5,5 @@ using UnityEngine;
 public class GlobalValues : MonoBehaviour
 {
    public static bool CubeAlive = true;
+   public static bool canMove=true;
 }

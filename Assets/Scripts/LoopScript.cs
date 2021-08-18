@@ -170,5 +170,6 @@ public class LoopScript : MonoBehaviour
     public void NextLevel()
     {
         SceneManager.UnloadSceneAsync(9);
+        GlobalValues.canMove=true;
     }
 }

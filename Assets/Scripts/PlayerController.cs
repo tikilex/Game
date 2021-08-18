@@ -39,23 +39,21 @@ public class PlayerController : MonoBehaviour
     {
         moveInput = joystick.Horizontal;
         moveInputKeyboard = Input.GetAxis ("Horizontal");//Прекрепил W/A и горизантальные стрелки через юнити
-    
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
         if (moveInputKeyboard != 0)
         {
         rb.velocity = new Vector2(moveInputKeyboard * speed, rb.velocity.y);
         }
-        //Console.WriteLine(moveInput);
 
-        if (facingRight == false && (moveInput > 0 || moveInputKeyboard > 0))
+        if (facingRight == false && (moveInput > 0 || moveInputKeyboard > 0) && GlobalValues.canMove==true)
         {
             Flip();
         }
-        if (facingRight == true && (moveInput < 0 || moveInputKeyboard < 0))
+        if (facingRight == true && (moveInput < 0 || moveInputKeyboard < 0) && GlobalValues.canMove==true)
         {
             Flip();
         }
-        if(moveInput != 0 || moveInputKeyboard != 0)  
+        if(moveInput != 0 || moveInputKeyboard != 0 && GlobalValues.canMove==true)  
         {
             animator.SetBool("isRunning", true);
         }
@@ -79,11 +77,19 @@ public class PlayerController : MonoBehaviour
         else{
             animator.SetBool("isJumping", true);
         }
+        if(GlobalValues.canMove==true)
+        {
+            speed=7;
+        }
+        else
+        {
+            speed=0;
+        }
     }
     
     public void OnJumpButtonDown()
     {
-        if (isGrounded == true)
+        if (isGrounded == true && GlobalValues.canMove==true)
         {
             rb.velocity = Vector2.up * jumpForce;
         }

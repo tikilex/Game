@@ -75,7 +75,7 @@ public class PyatScript : MonoBehaviour
     public void PlayAgain()
     {
         SceneManager.UnloadSceneAsync(8);
-        
+        GlobalValues.canMove=true;
     }
     
     
