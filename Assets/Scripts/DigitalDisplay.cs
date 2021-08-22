@@ -124,15 +124,14 @@ public class DigitalDisplay : MonoBehaviour
 
     private void CheckResults()
     {
-        if(codeSequence == "3228")
+        if(codeSequence == GlobalValues.rightCodeSequence)
         {
-            Debug.Log("Correct!");
             SceneManager.UnloadSceneAsync(10);
             GlobalValues.canMove=true;
+            GlobalValues.canvasStatus=true;
         }
         else
         {
-            Debug.Log("Wrong!");
             ResetDisplay();
         }
     }

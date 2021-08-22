@@ -287,6 +287,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &442340721 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7482958984758577802, guid: 7187c689b2ed8ad4da81cf09052382c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 4241103455155690529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &508251663
 GameObject:
   m_ObjectHideFlags: 0
@@ -1545,6 +1551,11 @@ PrefabInstance:
       propertyPath: anim
       value: 
       objectReference: {fileID: 551102125}
+    - target: {fileID: 4705657904770173928, guid: 7806f577287251f48b7356005f72fc75,
+        type: 3}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 442340721}
     - target: {fileID: 4705657904770173928, guid: 7806f577287251f48b7356005f72fc75,
         type: 3}
       propertyPath: levelToLoad
@@ -2941,12 +2952,12 @@ PrefabInstance:
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -38.883778
+      value: -40.13101
       objectReference: {fileID: 0}
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.889361
+      value: 15.912853
       objectReference: {fileID: 0}
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}

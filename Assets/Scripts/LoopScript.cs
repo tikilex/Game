@@ -7,8 +7,6 @@ public class LoopScript : MonoBehaviour
 {
     public GameObject canvas;
 
-
-
     [System.Serializable]
     public class Puzzle
     {
@@ -33,8 +31,6 @@ public class LoopScript : MonoBehaviour
 
         puzzle.wight = (int)dimensions.x;
         puzzle.height = (int)dimensions.y;
-
-
         puzzle.pieces = new piece[puzzle.wight, puzzle.height];
 
 
@@ -45,14 +41,11 @@ public class LoopScript : MonoBehaviour
 
         foreach (var item in puzzle.pieces)
         {
-
             Debug.Log(item.gameObject.name);
         }
 
         puzzle.winValue = GetWinValue();
-
         Shuffle();
-
         puzzle.curValue = Sweep();
     }
 
@@ -171,5 +164,6 @@ public class LoopScript : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(9);
         GlobalValues.canMove=true;
+        GlobalValues.canvasStatus=true;
     }
 }

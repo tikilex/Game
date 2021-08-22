@@ -13,16 +13,18 @@ public class PuzzleTrigger : MonoBehaviour
     public bool _isFinished = false;
     public int levelToLoad;
     public GameObject Canvas;
+    public string Code;
     
-   
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        GlobalValues.rightCodeSequence=Code;
         if(other.tag == "Player")
-        {
+        {   
+            GlobalValues.canvasStatus=false;
             SceneManager.LoadSceneAsync(levelToLoad,LoadSceneMode.Additive);
-          _isFinished=true;
-          GlobalValues.canMove=false; 
+            _isFinished=true;
+             GlobalValues.canMove=false; 
         }
     }
     public void FixedUpdate()
@@ -31,6 +33,13 @@ public class PuzzleTrigger : MonoBehaviour
         {
             animator.SetBool("isFinished", true);
             anim.SetTrigger("isTriggered");
+        }
+        if(GlobalValues.canvasStatus==false)
+        {
+            Canvas.SetActive(false);
+        }
+        else{
+            Canvas.SetActive(true);
         }
     }
     }

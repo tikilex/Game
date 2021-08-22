@@ -76,6 +76,7 @@ public class PyatScript : MonoBehaviour
     {
         SceneManager.UnloadSceneAsync(8);
         GlobalValues.canMove=true;
+        GlobalValues.canvasStatus=true;
     }
     
     

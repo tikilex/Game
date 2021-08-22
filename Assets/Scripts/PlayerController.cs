@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour
     public float checkRadious;
     public LayerMask whatIsGround;
    
-   public VectorValue pos;
+    public VectorValue pos;
 
     public Animator animator;
     
@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        
         moveInput = joystick.Horizontal;
         moveInputKeyboard = Input.GetAxis ("Horizontal");//Прекрепил W/A и горизантальные стрелки через юнити
         rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);

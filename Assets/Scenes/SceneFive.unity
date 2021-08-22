@@ -2593,6 +2593,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4705657904770173928, guid: 7806f577287251f48b7356005f72fc75,
         type: 3}
+      propertyPath: Code
+      value: 1488
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705657904770173928, guid: 7806f577287251f48b7356005f72fc75,
+        type: 3}
       propertyPath: anim
       value: 
       objectReference: {fileID: 630462875}
