@@ -21,6 +21,10 @@ namespace UnityStandardAssets._2D
             {
                    Destroy(other.gameObject);
             }
+            if (other.tag == "Thorn")
+            {
+                   Destroy(other.gameObject);
+            }
         }
     }
 }

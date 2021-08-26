@@ -10,6 +10,8 @@ TagManager:
   - Piece
   - Killzone
   - SpawnPhysicbox
+  - Ground
+  - Thorn
   layers:
   - Default
   - TransparentFX
