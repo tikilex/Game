@@ -178,7 +178,7 @@ MonoBehaviour:
   moveInputKeyboard: 0
   joystick: {fileID: 0}
   feetpos: {fileID: 3412656427468341922}
-  checkRadious: 0.5
+  checkRadious: 0.7
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256
