@@ -64,7 +64,7 @@ public class PyatScript : MonoBehaviour
             if (correctTiles == tiles.Length - 1)
             {
                 _isFinished = true;
-                endPanel.SetActive(true); //Скрипт сюда
+                SceneManager.LoadSceneAsync(levelToLoad);
                 var a = GetComponent<TimerScript>();
                 a.StopTimer();
                 endPanelTimeText.text = (a.minutes < 10 ? "0" : "") + a.minutes + ":" + (a.seconds < 10 ? "0" : "") + a.seconds;
