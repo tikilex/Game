@@ -509,6 +509,11 @@ PrefabInstance:
       objectReference: {fileID: 3288265366811120211}
     - target: {fileID: 4705657904770173928, guid: 7806f577287251f48b7356005f72fc75,
         type: 3}
+      propertyPath: Canvas
+      value: 
+      objectReference: {fileID: 685647004}
+    - target: {fileID: 4705657904770173928, guid: 7806f577287251f48b7356005f72fc75,
+        type: 3}
       propertyPath: levelToLoad
       value: 10
       objectReference: {fileID: 0}
@@ -932,6 +937,12 @@ Transform:
   m_Father: {fileID: 901241081}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &685647004 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7482958984758577802, guid: 7187c689b2ed8ad4da81cf09052382c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 4241103455155690529}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &777055055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2837,6 +2848,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: HintHolder
+      objectReference: {fileID: 0}
+    - target: {fileID: 908798274391692798, guid: 7f7f46ecc5a45b846a6ccdaa4a69bd1a,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 908798275179591842, guid: 7f7f46ecc5a45b846a6ccdaa4a69bd1a,
         type: 3}

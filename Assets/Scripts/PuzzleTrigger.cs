@@ -22,7 +22,7 @@ public class PuzzleTrigger : MonoBehaviour
         if(other.tag == "Player")
         {   
             GlobalValues.canvasStatus=false;
-            SceneManager.LoadSceneAsync(levelToLoad);
+            SceneManager.LoadSceneAsync(levelToLoad,LoadSceneMode.Additive);
             _isFinished=true;
              GlobalValues.canMove=false; 
         }

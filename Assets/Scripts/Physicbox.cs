@@ -9,7 +9,6 @@ public class Physicbox : MonoBehaviour
     {
         if (col.transform.tag == "floatPlatform") //передаем персонажу скорость движущихся платформ
             transform.parent = col.transform;
-
     }
     void OnCollisionExit2D(Collision2D col)
     {
