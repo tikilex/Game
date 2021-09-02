@@ -8,4 +8,5 @@ public class GlobalValues : MonoBehaviour
    public static bool canMove=true;
    public static string rightCodeSequence;
    public static bool canvasStatus=true;
+   public static int currentPuzzle;
 }

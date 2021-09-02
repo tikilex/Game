@@ -123,5 +123,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   values: 01000000010000000100000001000000
-  speed: 0.03
+  speed: 0.09
   gm: {fileID: 0}

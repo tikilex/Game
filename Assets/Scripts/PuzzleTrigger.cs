@@ -18,6 +18,7 @@ public class PuzzleTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
+        GlobalValues.currentPuzzle = levelToLoad;
         GlobalValues.rightCodeSequence=Code;
         if(other.tag == "Player")
         {   

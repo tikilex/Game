@@ -73,8 +73,7 @@ public class LoopScript : MonoBehaviour
 
     public void Win()
     {
-        canvas.SetActive(true);
-
+        NextLevel();
     }
 
     public int QuickSweep(int w, int h)
@@ -162,7 +161,7 @@ public class LoopScript : MonoBehaviour
 
     public void NextLevel()
     {
-        SceneManager.UnloadSceneAsync(9);
+        SceneManager.UnloadSceneAsync(GlobalValues.currentPuzzle);
         GlobalValues.canMove=true;
         GlobalValues.canvasStatus=true;
     }

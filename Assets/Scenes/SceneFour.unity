@@ -1429,7 +1429,7 @@ PrefabInstance:
     - target: {fileID: 9105128496476785417, guid: 84bf5c0b0f2706f40ae6d8a501336321,
         type: 3}
       propertyPath: levelToLoad
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9105128496476785417, guid: 84bf5c0b0f2706f40ae6d8a501336321,
         type: 3}
@@ -1559,7 +1559,7 @@ PrefabInstance:
     - target: {fileID: 4705657904770173928, guid: 7806f577287251f48b7356005f72fc75,
         type: 3}
       propertyPath: levelToLoad
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4705657904770173930, guid: 7806f577287251f48b7356005f72fc75,
         type: 3}
@@ -2472,6 +2472,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HintHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 908798274391692798, guid: 7f7f46ecc5a45b846a6ccdaa4a69bd1a,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 908798275179591842, guid: 7f7f46ecc5a45b846a6ccdaa4a69bd1a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -2952,12 +2957,12 @@ PrefabInstance:
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -40.13101
+      value: -33.556175
       objectReference: {fileID: 0}
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 15.912853
+      value: 15.789026
       objectReference: {fileID: 0}
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}

@@ -21,7 +21,7 @@ public class PyatScript : MonoBehaviour
     void Start()
     {
         _camera = Camera.main;
-        Shuffle();
+        //Shuffle();
     }
 
     
@@ -66,15 +66,17 @@ public class PyatScript : MonoBehaviour
                 var a = GetComponent<TimerScript>();
                 a.StopTimer();
                 endPanelTimeText.text = (a.minutes < 10 ? "0" : "") + a.minutes + ":" + (a.seconds < 10 ? "0" : "") + a.seconds;
+                GlobalValues.canMove=true;
+                GlobalValues.canvasStatus=true;        
             }
+
         }
     }
 
     public void PlayAgain()
     {
         SceneManager.UnloadSceneAsync(8);
-        GlobalValues.canMove=true;
-        GlobalValues.canvasStatus=true;
+        
     }
     
     
