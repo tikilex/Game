@@ -22,8 +22,6 @@ public class PyatScript : MonoBehaviour
     {
         _camera = Camera.main;
         Shuffle();
-        
-
     }
 
     

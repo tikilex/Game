@@ -1504,7 +1504,7 @@ MonoBehaviour:
   _isFinished: 0
   endPanel: {fileID: 1780362152}
   endPanelTimeText: {fileID: 206444737}
-  levelToLoad: 0
+  levelToLoad: 4
   position: {x: 0, y: 0}
   playerStorage: {fileID: 0}
 --- !u!20 &519420031

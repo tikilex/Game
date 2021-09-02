@@ -1683,12 +1683,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 908798274949823417}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1691389807 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 1971551532915942655, guid: 8b30247829bec704db5998c52c681583,
-    type: 3}
-  m_PrefabInstance: {fileID: 1846050923}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1732200617 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2362294288074199164, guid: f2b5004006999e44f8f1917a388198b1,
@@ -2297,6 +2291,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1962518633}
   m_CullTransparentMesh: 1
+--- !u!1 &1996712066 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4705657904770173935, guid: 7806f577287251f48b7356005f72fc75,
+    type: 3}
+  m_PrefabInstance: {fileID: 4705657904849690694}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1996712067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1996712066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a7db186843bf6c468e567b089fac28f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 1996712069}
+  anim: {fileID: 0}
+  puzzle: {fileID: 0}
+  _isFinished: 0
+  levelToLoad: 9
+  Canvas: {fileID: 1531842485}
+  Code: 
+--- !u!95 &1996712069 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4705657904770173932, guid: 7806f577287251f48b7356005f72fc75,
+    type: 3}
+  m_PrefabInstance: {fileID: 4705657904849690694}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2002607070
 GameObject:
   m_ObjectHideFlags: 0
@@ -2964,16 +2989,21 @@ PrefabInstance:
         type: 3}
       propertyPath: anim
       value: 
-      objectReference: {fileID: 1691389807}
+      objectReference: {fileID: 0}
     - target: {fileID: 4705657904770173928, guid: 7806f577287251f48b7356005f72fc75,
         type: 3}
       propertyPath: Canvas
       value: 
-      objectReference: {fileID: 1531842485}
+      objectReference: {fileID: 0}
+    - target: {fileID: 4705657904770173928, guid: 7806f577287251f48b7356005f72fc75,
+        type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4705657904770173928, guid: 7806f577287251f48b7356005f72fc75,
         type: 3}
       propertyPath: levelToLoad
-      value: 8
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4705657904770173930, guid: 7806f577287251f48b7356005f72fc75,
         type: 3}
@@ -3035,7 +3065,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Puzzle trigger
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 4705657904770173928, guid: 7806f577287251f48b7356005f72fc75, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7806f577287251f48b7356005f72fc75, type: 3}
 --- !u!1001 &6669485753237550345
 PrefabInstance:
@@ -3092,7 +3123,7 @@ PrefabInstance:
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -36.330563
+      value: -32.412365
       objectReference: {fileID: 0}
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}
