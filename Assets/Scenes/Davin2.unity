@@ -1507,6 +1507,7 @@ MonoBehaviour:
   levelToLoad: 4
   position: {x: 0, y: 0}
   playerStorage: {fileID: 0}
+  WantToShuffle: 1
 --- !u!20 &519420031
 Camera:
   m_ObjectHideFlags: 0

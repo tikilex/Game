@@ -16,25 +16,27 @@ public class PyatScript : MonoBehaviour
     public int levelToLoad;
     public Vector2 position;
     public VectorValue playerStorage;
-    
+    public bool WantToShuffle = true;
+
 
     void Start()
     {
         _camera = Camera.main;
-        //Shuffle();
+        if (WantToShuffle)
+            Shuffle();
     }
 
-    
+
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
             Ray ray = _camera.ScreenPointToRay(Input.mousePosition);
             RaycastHit2D hit = Physics2D.Raycast(ray.origin, ray.direction);
-            if (hit) 
+            if (hit)
             {
-                if(Vector2.Distance(emptySpace.position, hit.transform.position) < 3)
+                if (Vector2.Distance(emptySpace.position, hit.transform.position) < 3)
                 {
                     Vector2 lastEmptySpacePosition = emptySpace.position;
                     TilesScript thisTile = hit.transform.GetComponent<TilesScript>();
@@ -66,8 +68,8 @@ public class PyatScript : MonoBehaviour
                 var a = GetComponent<TimerScript>();
                 a.StopTimer();
                 endPanelTimeText.text = (a.minutes < 10 ? "0" : "") + a.minutes + ":" + (a.seconds < 10 ? "0" : "") + a.seconds;
-                GlobalValues.canMove=true;
-                GlobalValues.canvasStatus=true;        
+                GlobalValues.canMove = true;
+                GlobalValues.canvasStatus = true;
             }
 
         }
@@ -76,16 +78,16 @@ public class PyatScript : MonoBehaviour
     public void PlayAgain()
     {
         SceneManager.UnloadSceneAsync(8);
-        
+
     }
-    
-    
 
-    
 
-    public void Shuffle() 
+
+
+
+    public void Shuffle()
     {
-        if (emptySpaceIndex !=15)
+        if (emptySpaceIndex != 15)
         {
             var tileOn15LastPos = tiles[15].targetPosition;
             tiles[15].targetPosition = emptySpace.position;
@@ -108,18 +110,18 @@ public class PyatScript : MonoBehaviour
                 tiles[randomIndex] = tile;
             }
             invertion = GetInversions();
-            Debug.Log(message:"");
-        } while (invertion%2 != 0);
+            Debug.Log(message: "");
+        } while (invertion % 2 != 0);
     }
 
 
     public int findIndex(TilesScript ts)
     {
-        for(int i = 0; i < tiles.Length; i++)
+        for (int i = 0; i < tiles.Length; i++)
         {
-            if(tiles[i] != null)
+            if (tiles[i] != null)
             {
-                if(tiles[i] == ts)
+                if (tiles[i] == ts)
                 {
                     return i;
                 }
