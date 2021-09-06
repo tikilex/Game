@@ -20,7 +20,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!114 &4271536075418607916
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -64,12 +64,12 @@ PrefabInstance:
     - target: {fileID: 1101703900423383262, guid: bc885ff92bf08914dab82d5438a6ef64,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 5.0108876
+      value: 4.173175
       objectReference: {fileID: 0}
     - target: {fileID: 1101703900423383262, guid: bc885ff92bf08914dab82d5438a6ef64,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.306983
+      value: 4.7432146
       objectReference: {fileID: 0}
     - target: {fileID: 1101703900423383262, guid: bc885ff92bf08914dab82d5438a6ef64,
         type: 3}
