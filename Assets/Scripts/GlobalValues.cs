@@ -9,4 +9,6 @@ public class GlobalValues : MonoBehaviour
    public static string rightCodeSequence;
    public static bool canvasStatus=true;
    public static int currentPuzzle;
+   public static bool MechChecker1=false;
+   public static bool MechChecker2=false;
 }

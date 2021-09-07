@@ -4,22 +4,23 @@ using UnityEngine;
 
 public class Hint : MonoBehaviour
 {
-    public GameObject hint;
-    private void OnTriggerEnter2D(Collider2D other)
-    {   if(other.CompareTag("Player"))
-        {
-        hint.SetActive(true);
-        }
-    }
+public GameObject hint;
+private void OnTriggerEnter2D(Collider2D other)
+{ if(other.CompareTag("Player"))
+{
+hint.SetActive(true);
+StartCoroutine(DestroyObj());
+}
+}
 
-    void Start()
-    {
-     StartCoroutine(DestroyObj());
-    }
+void Start()
+{
+StartCoroutine(DestroyObj());
+}
 
-    IEnumerator DestroyObj()
-    {
-    yield return new WaitForSeconds(0.3f);
-    hint.SetActive(false);
-    }
-}  
+IEnumerator DestroyObj()
+{
+yield return new WaitForSeconds(3f);
+hint.SetActive(false);
+}
+}
