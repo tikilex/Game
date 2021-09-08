@@ -58,7 +58,7 @@ public class PlayerController : MonoBehaviour
         if(moveInput != 0 || moveInputKeyboard != 0 && GlobalValues.canMove==true && isGrounded==true)  
         {
             animator.SetBool("isRunning", true);
-            CurrentFrame+=0.38;
+            CurrentFrame+=0.4;
             if(CurrentFrame>5)
             {
                 CurrentFrame=1;

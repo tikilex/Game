@@ -28,8 +28,9 @@ private void OnTriggerEnter2D(Collider2D other)
 {
 if(other.tag == "Player")
 {
-animator.SetTrigger("isTriggered");
-anim.SetTrigger("isTriggered");
+    SoundManager.PlaySound("door");
+    animator.SetTrigger("isTriggered");
+    anim.SetTrigger("isTriggered");
 }
 
 if(mechanism==true)
