@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     public Transform feetpos;
     public float checkRadious;
     public LayerMask whatIsGround;
+    private double CurrentFrame=0;
    
     public VectorValue pos;
 
@@ -35,7 +36,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
     }
 
-    private void FixedUpdate()
+    private void  FixedUpdate()
     {
         
         moveInput = joystick.Horizontal;
@@ -54,13 +55,20 @@ public class PlayerController : MonoBehaviour
         {
             Flip();
         }
-        if(moveInput != 0 || moveInputKeyboard != 0 && GlobalValues.canMove==true)  
+        if(moveInput != 0 || moveInputKeyboard != 0 && GlobalValues.canMove==true && isGrounded==true)  
         {
             animator.SetBool("isRunning", true);
+            CurrentFrame+=0.38;
+            if(CurrentFrame>5)
+            {
+                CurrentFrame=1;
+            }
+            StartCoroutine(StepSound());
         }
         else
         {
             animator.SetBool("isRunning", false);
+            CurrentFrame=0;
         }
 
         if (Input.GetButton("Jump") == true ){
@@ -122,6 +130,34 @@ public class PlayerController : MonoBehaviour
     {
         if (col.transform.tag == "physicbox") //убираем у персонажа скорость блока
             transform.parent = null;
+    }
+
+    IEnumerator StepSound()
+    {  
+        switch (CurrentFrame)
+        {
+            case 1:
+            SoundManager.PlaySound("step1");
+            yield return new WaitForSeconds(1f);
+            break;
+            case 2:
+            SoundManager.PlaySound("step2");
+            yield return new WaitForSeconds(1f);
+            break;
+            case 3:
+            SoundManager.PlaySound("step3");
+            yield return new WaitForSeconds(1f);
+            break;
+            case 4:
+            SoundManager.PlaySound("step4");
+            yield return new WaitForSeconds(1f);
+            break;
+            case 5:
+            SoundManager.PlaySound("step5");
+            yield return new WaitForSeconds(1f);
+            break;
+        }
+        
     }
 }
 

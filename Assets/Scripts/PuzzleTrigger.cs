@@ -22,6 +22,7 @@ public class PuzzleTrigger : MonoBehaviour
         GlobalValues.rightCodeSequence=Code;
         if(other.tag == "Player")
         {   
+            SoundManager.PlaySound("door");
             GlobalValues.canvasStatus=false;
             SceneManager.LoadSceneAsync(levelToLoad,LoadSceneMode.Additive);
             _isFinished=true;

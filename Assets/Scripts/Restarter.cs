@@ -6,10 +6,12 @@ namespace UnityStandardAssets._2D
 {
     public class Restarter : MonoBehaviour
     {
+        
         private void OnTriggerEnter2D(Collider2D other)
         {
             if (other.tag == "Player")
             {
+                SoundManager.PlaySound("death");
                 SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
             }
              if (other.tag == "SpawnPhysicbox")
