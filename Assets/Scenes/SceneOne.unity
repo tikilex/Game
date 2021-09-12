@@ -5999,6 +5999,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: HintHolder
       objectReference: {fileID: 0}
+    - target: {fileID: 908798274391692798, guid: 7f7f46ecc5a45b846a6ccdaa4a69bd1a,
+        type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 908798275179591842, guid: 7f7f46ecc5a45b846a6ccdaa4a69bd1a,
         type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -6921,12 +6926,12 @@ PrefabInstance:
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35.957172
+      value: -33.831333
       objectReference: {fileID: 0}
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.597128
+      value: 14.598728
       objectReference: {fileID: 0}
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}

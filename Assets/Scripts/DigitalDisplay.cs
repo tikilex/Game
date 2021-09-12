@@ -126,7 +126,7 @@ public class DigitalDisplay : MonoBehaviour
     {
         if(codeSequence == GlobalValues.rightCodeSequence)
         {
-            SceneManager.UnloadSceneAsync(10);
+            SceneManager.UnloadSceneAsync(12);
             GlobalValues.canMove=true;
             GlobalValues.canvasStatus=true;
         }

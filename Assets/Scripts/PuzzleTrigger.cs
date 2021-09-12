@@ -9,6 +9,7 @@ public class PuzzleTrigger : MonoBehaviour
 
     public Animator animator;
     public Animator anim;
+    public Animator ani;
     public GameObject puzzle;
     public bool _isFinished = false;
     public int levelToLoad;
@@ -35,6 +36,7 @@ public class PuzzleTrigger : MonoBehaviour
         {
             animator.SetBool("isFinished", true);
             anim.SetTrigger("isTriggered");
+            ani.SetTrigger("isTriggered");
         }
         if(GlobalValues.canvasStatus==false)
         {
