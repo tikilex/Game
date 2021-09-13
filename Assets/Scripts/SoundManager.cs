@@ -12,17 +12,14 @@ public class SoundManager : MonoBehaviour
     public static AudioClip step4;
     public static AudioClip step5;
     public static AudioClip drop;
-
     public static AudioClip longfall;
-    static AudioSource playerSrc;
-    static AudioSource musicSrc;
 
-    static AudioSource worldSrc;
+    public static AudioSource playerSrc;
+    public static AudioSource musicSrc;
+    public static AudioSource worldSrc;
 
     public int playerSoundsVolume;
-
     public int otherSoundsVolume;
-
     public int musicVolume;
 
     void Start()
@@ -36,9 +33,9 @@ public class SoundManager : MonoBehaviour
         step5 = Resources.Load<AudioClip>("step5");
         drop = Resources.Load<AudioClip>("drop");
         longfall = Resources.Load<AudioClip>("longfall");
-        playerSrc = GetComponent<AudioSource>();
-        musicSrc = GetComponent<AudioSource>();
-        worldSrc = GetComponent<AudioSource>();
+        playerSrc = gameObject.AddComponent<AudioSource>();
+        musicSrc = gameObject.AddComponent<AudioSource>();
+        worldSrc = gameObject.AddComponent<AudioSource>();
     }
 
     public static void volumeUpdate(int playerSoundsVolume, int otherSoundsVolume, int musicVolume)
@@ -62,10 +59,10 @@ public class SoundManager : MonoBehaviour
                 playerSrc.volume = 0.8f;
                 break;
             case 10:
-                playerSrc.volume = 1f;
+                playerSrc.volume = 1.0f;
                 break;
             default:
-                playerSrc.volume = 1f;
+                playerSrc.volume = 1.0f;
                 break;
         }
         switch (musicVolume)
@@ -86,10 +83,10 @@ public class SoundManager : MonoBehaviour
                 musicSrc.volume = 0.8f;
                 break;
             case 10:
-                musicSrc.volume = 1f;
+                musicSrc.volume = 1.0f;
                 break;
             default:
-                musicSrc.volume = 1f;
+                musicSrc.volume = 1.0f;
                 break;
         }
         switch (otherSoundsVolume)
@@ -110,10 +107,10 @@ public class SoundManager : MonoBehaviour
                 worldSrc.volume = 0.8f;
                 break;
             case 10:
-                worldSrc.volume = 1f;
+                worldSrc.volume = 1.0f;
                 break;
             default:
-                worldSrc.volume = 1f;
+                worldSrc.volume = 1.0f;
                 break;
         }
     }
@@ -121,7 +118,6 @@ public class SoundManager : MonoBehaviour
     void FixedUpdate()
     {
         volumeUpdate(playerSoundsVolume, otherSoundsVolume, musicVolume);
-        Debug.Log(playerSrc.volume);
     }
     public static void PlaySound(string clip)
     {
