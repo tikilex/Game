@@ -52,7 +52,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
             if (moveInputKeyboard != 0)
             {
-                rb.velocity = new Vector2(moveInputKeyboard * speed, rb.velocity.y);
+                rb.velocity = new Vector2(moveInputKeyboard * speed , rb.velocity.y);
             }
 
             if (facingRight == false && (moveInput > 0 || moveInputKeyboard > 0) && GlobalValues.canMove == true)
@@ -104,7 +104,7 @@ public class PlayerController : MonoBehaviour
             {
                 wasAirborn = true;
                 airbornTime++;
-                Debug.Log(airbornTime);
+                //Debug.Log(airbornTime);
             }
         }
     }

@@ -411,6 +411,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2038040799796946184, guid: be51dd6cc87c53b4ead084eba9008bdd,
+        type: 3}
+      propertyPath: playerSoundsVolume
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 2038040799796946185, guid: be51dd6cc87c53b4ead084eba9008bdd,
         type: 3}
       propertyPath: m_Name
@@ -3192,7 +3197,7 @@ PrefabInstance:
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -41.618103
+      value: -32.91657
       objectReference: {fileID: 0}
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}

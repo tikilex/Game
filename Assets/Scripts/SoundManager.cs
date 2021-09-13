@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip fall;
+    public static AudioClip death;
     public static AudioClip door;
     public static AudioClip step1;
     public static AudioClip step2;
@@ -14,10 +14,20 @@ public class SoundManager : MonoBehaviour
     public static AudioClip drop;
 
     public static AudioClip longfall;
-    static AudioSource audioSrc;
+    static AudioSource playerSrc;
+    static AudioSource musicSrc;
+
+    static AudioSource worldSrc;
+
+    public int playerSoundsVolume;
+
+    public int otherSoundsVolume;
+
+    public int musicVolume;
+
     void Start()
     {
-        fall = Resources.Load<AudioClip>("death");
+        death = Resources.Load<AudioClip>("death");
         door = Resources.Load<AudioClip>("door");
         step1 = Resources.Load<AudioClip>("step1");
         step2 = Resources.Load<AudioClip>("step2");
@@ -26,40 +36,124 @@ public class SoundManager : MonoBehaviour
         step5 = Resources.Load<AudioClip>("step5");
         drop = Resources.Load<AudioClip>("drop");
         longfall = Resources.Load<AudioClip>("longfall");
-        audioSrc = GetComponent<AudioSource>();
+        playerSrc = GetComponent<AudioSource>();
+        musicSrc = GetComponent<AudioSource>();
+        worldSrc = GetComponent<AudioSource>();
     }
 
+    public static void volumeUpdate(int playerSoundsVolume, int otherSoundsVolume, int musicVolume)
+    {
+        //перевод нормального флоата в F вариант
+        switch (playerSoundsVolume)
+        {
+            case 0:
+                playerSrc.volume = 0f;
+                break;
+            case 2:
+                playerSrc.volume = 0.2f;
+                break;
+            case 4:
+                playerSrc.volume = 0.4f;
+                break;
+            case 6:
+                playerSrc.volume = 0.6f;
+                break;
+            case 8:
+                playerSrc.volume = 0.8f;
+                break;
+            case 10:
+                playerSrc.volume = 1f;
+                break;
+            default:
+                playerSrc.volume = 1f;
+                break;
+        }
+        switch (musicVolume)
+        {
+            case 0:
+                musicSrc.volume = 0f;
+                break;
+            case 2:
+                musicSrc.volume = 0.2f;
+                break;
+            case 4:
+                musicSrc.volume = 0.4f;
+                break;
+            case 6:
+                musicSrc.volume = 0.6f;
+                break;
+            case 8:
+                musicSrc.volume = 0.8f;
+                break;
+            case 10:
+                musicSrc.volume = 1f;
+                break;
+            default:
+                musicSrc.volume = 1f;
+                break;
+        }
+        switch (otherSoundsVolume)
+        {
+            case 0:
+                worldSrc.volume = 0f;
+                break;
+            case 2:
+                worldSrc.volume = 0.2f;
+                break;
+            case 4:
+                worldSrc.volume = 0.4f;
+                break;
+            case 6:
+                worldSrc.volume = 0.6f;
+                break;
+            case 8:
+                worldSrc.volume = 0.8f;
+                break;
+            case 10:
+                worldSrc.volume = 1f;
+                break;
+            default:
+                worldSrc.volume = 1f;
+                break;
+        }
+    }
+
+    void FixedUpdate()
+    {
+        volumeUpdate(playerSoundsVolume, otherSoundsVolume, musicVolume);
+        Debug.Log(playerSrc.volume);
+    }
     public static void PlaySound(string clip)
     {
         switch (clip)
         {
             case "death":
-                audioSrc.time = 0.4f;
-                audioSrc.PlayOneShot(fall);
+                playerSrc.time = 0.4f;
+                playerSrc.PlayOneShot(death);
                 break;
             case "door":
-                audioSrc.PlayOneShot(door);
+                playerSrc.PlayOneShot(door);
                 break;
             case "step1":
-                audioSrc.PlayOneShot(step1);
+                playerSrc.PlayOneShot(step1);
                 break;
             case "step2":
-                audioSrc.PlayOneShot(step2);
+                playerSrc.PlayOneShot(step2);
                 break;
             case "step3":
-                audioSrc.PlayOneShot(step3);
+                playerSrc.PlayOneShot(step3);
                 break;
             case "step4":
-                audioSrc.PlayOneShot(step4);
+                playerSrc.PlayOneShot(step4);
                 break;
             case "step5":
-                audioSrc.PlayOneShot(step5);
+                playerSrc.PlayOneShot(step5);
                 break;
             case "drop":
-                audioSrc.PlayOneShot(drop);
+                playerSrc.PlayOneShot(drop);
                 break;
             case "longfall":
-                audioSrc.PlayOneShot(longfall);
+                playerSrc.PlayOneShot(longfall);
                 break;
             default:
                 break;
