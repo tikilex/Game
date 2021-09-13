@@ -166,28 +166,35 @@ public class PlayerController : MonoBehaviour
             transform.parent = null;
     }
 
+
+
     IEnumerator StepSound()
     {
         switch (CurrentFrame)
         {
             case 1:
-                SoundManager.PlaySound("step1");
+                if (isGrounded)
+                    SoundManager.PlaySound("step1");
                 yield return new WaitForSeconds(1f);
                 break;
             case 2:
-                SoundManager.PlaySound("step2");
+                if (isGrounded)
+                    SoundManager.PlaySound("step2");
                 yield return new WaitForSeconds(1f);
                 break;
             case 3:
-                SoundManager.PlaySound("step3");
+                if (isGrounded)
+                    SoundManager.PlaySound("step3");
                 yield return new WaitForSeconds(1f);
                 break;
             case 4:
-                SoundManager.PlaySound("step4");
+                if (isGrounded)
+                    SoundManager.PlaySound("step4");
                 yield return new WaitForSeconds(1f);
                 break;
             case 5:
-                SoundManager.PlaySound("step5");
+                if (isGrounded)
+                    SoundManager.PlaySound("step5");
                 yield return new WaitForSeconds(1f);
                 break;
         }
