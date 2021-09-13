@@ -183,6 +183,7 @@ MonoBehaviour:
   pos: {fileID: 11400000, guid: dfa22d128591d154fbdefb461de8a47b, type: 2}
   animator: {fileID: 0}
   deadzone: 0.35
+  damagingHeight: 70
 --- !u!212 &2967236108722814268
 SpriteRenderer:
   m_ObjectHideFlags: 0

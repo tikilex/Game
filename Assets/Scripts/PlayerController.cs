@@ -27,9 +27,11 @@ public class PlayerController : MonoBehaviour
 
     public float deadzone = 0;
     private float minusDeadzone;
+    private bool wasAirborn = true;
 
+    private int airbornTime = 0;
 
-
+    public int damagingHeight = 0;
     private void Start()
     {
         transform.position = pos.initValue;
@@ -40,10 +42,10 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+
         moveInput = joystick.Horizontal;
         moveInputKeyboard = Input.GetAxis("Horizontal");//Прекрепил W/A и горизантальные стрелки через юнити
-        if (GlobalValues.canMove == true && ((moveInput > deadzone  || moveInput < minusDeadzone) || moveInputKeyboard != 0))//1000 и одно условие что бы мёртвая зона стика работала
+        if (GlobalValues.canMove == true && ((moveInput > deadzone || moveInput < minusDeadzone) || moveInputKeyboard != 0))//1000 и одно условие что бы мёртвая зона стика работала
 
         {
             //Debug.Log(moveInput);
@@ -67,7 +69,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y);
             animator.SetBool("isRunning", false);
         }
-        if (((moveInput > deadzone  || moveInput < minusDeadzone) || moveInputKeyboard != 0) && GlobalValues.canMove == true && isGrounded == true)
+        if (((moveInput > deadzone || moveInput < minusDeadzone) || moveInputKeyboard != 0) && GlobalValues.canMove == true && isGrounded == true)
         {
             animator.SetBool("isRunning", true);
             CurrentFrame += 0.4;
@@ -85,6 +87,26 @@ public class PlayerController : MonoBehaviour
             OnJumpButtonDown();
         }
 
+        if (isGrounded && wasAirborn)//приземлился
+        {
+            animator.SetBool("isLanding", true);
+            wasAirborn = false;
+            if (airbornTime >= damagingHeight)
+                SoundManager.PlaySound("longfall");
+            else
+                SoundManager.PlaySound("drop");
+            airbornTime = 0;
+        }
+        else
+        {
+            animator.SetBool("isLanding", false);//падает
+            if (!isGrounded)
+            {
+                wasAirborn = true;
+                airbornTime++;
+                Debug.Log(airbornTime);
+            }
+        }
     }
 
     void Update()
