@@ -7,8 +7,8 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public float jumpForce;
-    public float moveInput;
-    public float moveInputKeyboard;
+    private float moveInput;
+    private float moveInputKeyboard;
 
     public Joystick joystick;
 
@@ -19,86 +19,98 @@ public class PlayerController : MonoBehaviour
     public Transform feetpos;
     public float checkRadious;
     public LayerMask whatIsGround;
-    private double CurrentFrame=0;
-   
+    private double CurrentFrame = 0;
+
     public VectorValue pos;
 
     public Animator animator;
-    
 
-    
-    
+    public float deadzone = 0;
+    private float minusDeadzone;
+
+
 
     private void Start()
     {
         transform.position = pos.initValue;
+        minusDeadzone = deadzone * -1;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
 
-    private void  FixedUpdate()
+    private void FixedUpdate()
     {
         
         moveInput = joystick.Horizontal;
-        moveInputKeyboard = Input.GetAxis ("Horizontal");//Прекрепил W/A и горизантальные стрелки через юнити
-        rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
-        if (moveInputKeyboard != 0)
-        {
-        rb.velocity = new Vector2(moveInputKeyboard * speed, rb.velocity.y);
-        }
+        moveInputKeyboard = Input.GetAxis("Horizontal");//Прекрепил W/A и горизантальные стрелки через юнити
+        if (GlobalValues.canMove == true && ((moveInput > deadzone  || moveInput < minusDeadzone) || moveInputKeyboard != 0))//1000 и одно условие что бы мёртвая зона стика работала
 
-        if (facingRight == false && (moveInput > 0 || moveInputKeyboard > 0) && GlobalValues.canMove==true)
         {
-            Flip();
+            //Debug.Log(moveInput);
+            rb.velocity = new Vector2(moveInput * speed, rb.velocity.y);
+            if (moveInputKeyboard != 0)
+            {
+                rb.velocity = new Vector2(moveInputKeyboard * speed, rb.velocity.y);
+            }
+
+            if (facingRight == false && (moveInput > 0 || moveInputKeyboard > 0) && GlobalValues.canMove == true)
+            {
+                Flip();
+            }
+            if (facingRight == true && (moveInput < 0 || moveInputKeyboard < 0) && GlobalValues.canMove == true)
+            {
+                Flip();
+            }
         }
-        if (facingRight == true && (moveInput < 0 || moveInputKeyboard < 0) && GlobalValues.canMove==true)
+        else
         {
-            Flip();
+            rb.velocity = new Vector2(0, rb.velocity.y);
+            animator.SetBool("isRunning", false);
         }
-        if(moveInput != 0 || moveInputKeyboard != 0 && GlobalValues.canMove==true && isGrounded==true)  
+        if (((moveInput > deadzone  || moveInput < minusDeadzone) || moveInputKeyboard != 0) && GlobalValues.canMove == true && isGrounded == true)
         {
             animator.SetBool("isRunning", true);
-            CurrentFrame+=0.4;
-            if(CurrentFrame>5)
+            CurrentFrame += 0.4;
+            if (CurrentFrame > 5)
             {
-                CurrentFrame=1;
+                CurrentFrame = 1;
             }
             StartCoroutine(StepSound());
         }
         else
-        {
-            animator.SetBool("isRunning", false);
-            CurrentFrame=0;
-        }
+            CurrentFrame = 0;
 
-        if (Input.GetButton("Jump") == true ){
+        if (Input.GetButton("Jump") == true)
+        {
             OnJumpButtonDown();
         }
+
     }
 
     void Update()
     {
         isGrounded = Physics2D.OverlapCircle(feetpos.position, checkRadious, whatIsGround);
-        if(isGrounded == true)
+        if (isGrounded == true)
         {
             animator.SetBool("isJumping", false);
         }
-        else{
+        else
+        {
             animator.SetBool("isJumping", true);
         }
-        if(GlobalValues.canMove==true)
+        if (GlobalValues.canMove == true)
         {
-            speed=7;
+            speed = 7;
         }
         else
         {
-            speed=0;
+            speed = 0;
         }
     }
-    
+
     public void OnJumpButtonDown()
     {
-        if (isGrounded == true && GlobalValues.canMove==true)
+        if (isGrounded == true && GlobalValues.canMove == true)
         {
             rb.velocity = Vector2.up * jumpForce;
         }
@@ -133,31 +145,31 @@ public class PlayerController : MonoBehaviour
     }
 
     IEnumerator StepSound()
-    {  
+    {
         switch (CurrentFrame)
         {
             case 1:
-            SoundManager.PlaySound("step1");
-            yield return new WaitForSeconds(1f);
-            break;
+                SoundManager.PlaySound("step1");
+                yield return new WaitForSeconds(1f);
+                break;
             case 2:
-            SoundManager.PlaySound("step2");
-            yield return new WaitForSeconds(1f);
-            break;
+                SoundManager.PlaySound("step2");
+                yield return new WaitForSeconds(1f);
+                break;
             case 3:
-            SoundManager.PlaySound("step3");
-            yield return new WaitForSeconds(1f);
-            break;
+                SoundManager.PlaySound("step3");
+                yield return new WaitForSeconds(1f);
+                break;
             case 4:
-            SoundManager.PlaySound("step4");
-            yield return new WaitForSeconds(1f);
-            break;
+                SoundManager.PlaySound("step4");
+                yield return new WaitForSeconds(1f);
+                break;
             case 5:
-            SoundManager.PlaySound("step5");
-            yield return new WaitForSeconds(1f);
-            break;
+                SoundManager.PlaySound("step5");
+                yield return new WaitForSeconds(1f);
+                break;
         }
-        
+
     }
 }
 
