@@ -9,6 +9,7 @@ public Animator anim;
 public Animator ani;
 public bool mechanism=false;
 public int NumberMech=0;
+private bool Activated=false;
 
 private void Start()
 {
@@ -28,9 +29,13 @@ private void OnTriggerEnter2D(Collider2D other)
 {
 if(other.tag == "Player")
 {
+    if(!Activated)
+    {
     SoundManager.PlaySound("door");
     animator.SetTrigger("isTriggered");
     anim.SetTrigger("isTriggered");
+    Activated = true;
+    }
 }
 
 if(mechanism==true)
