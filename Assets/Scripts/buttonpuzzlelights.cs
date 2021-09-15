@@ -6,43 +6,62 @@ public class buttonpuzzlelights : MonoBehaviour
 {
     public int buttonIndex = -1;
 
+    private int pressTimer = 0;
+
+    private bool startTimer = false;
+
     private bool[] combo1 = new bool[5];//2 комбинаций для каждой кнопки
     private bool[] combo2 = new bool[5];
 
     public void buttonFunc()//Меняем значение ламп и меняем комбинацию кнопки
     {
-        switch (buttonIndex)
+        if (!startTimer && pressTimer == 0)
         {
-            case 1:
-                if (GlobalValues.buttonState1)
-                    changerCombo1();
-                else
-                    changerCombo2();
-                GlobalValues.buttonState1 = !GlobalValues.buttonState1;
-                break;
-            case 2:
-                if (GlobalValues.buttonState2)
-                    changerCombo1();
-                else
-                    changerCombo2();
-                GlobalValues.buttonState2 = !GlobalValues.buttonState2;
-                break;
-            case 3:
-                if (GlobalValues.buttonState3)
-                    changerCombo1();
-                else
-                    changerCombo2();
-                GlobalValues.buttonState3 = !GlobalValues.buttonState3;
-                break;
-            case 4:
-                if (GlobalValues.buttonState4)
-                    changerCombo1();
-                else
-                    changerCombo2();
-                GlobalValues.buttonState4 = !GlobalValues.buttonState4;
-                break;
-            default:
-                break;
+            switch (buttonIndex)
+            {
+                case 1:
+                    if (GlobalValues.buttonState1)
+                        changerCombo1();
+                    else
+                        changerCombo2();
+                    GlobalValues.buttonState1 = !GlobalValues.buttonState1;
+                    break;
+                case 2:
+                    if (GlobalValues.buttonState2)
+                        changerCombo1();
+                    else
+                        changerCombo2();
+                    GlobalValues.buttonState2 = !GlobalValues.buttonState2;
+                    break;
+                case 3:
+                    if (GlobalValues.buttonState3)
+                        changerCombo1();
+                    else
+                        changerCombo2();
+                    GlobalValues.buttonState3 = !GlobalValues.buttonState3;
+                    break;
+                case 4:
+                    if (GlobalValues.buttonState4)
+                        changerCombo1();
+                    else
+                        changerCombo2();
+                    GlobalValues.buttonState4 = !GlobalValues.buttonState4;
+                    break;
+                default:
+                    break;
+            }
+            startTimer = true;
+        }
+
+    }
+
+    private void FixedUpdate(){
+        if(startTimer){
+            pressTimer++;
+        }
+        if(pressTimer > 15){
+            startTimer = false;
+            pressTimer = 0;
         }
     }
     void Start() //Парсим комбинации для кнопок на основе индекса кнопки
@@ -119,7 +138,7 @@ public class buttonpuzzlelights : MonoBehaviour
 
     void puzzleBoolSwitch(int pos)//переворачиватель булов
     {
-            lightpuzzlemanager.lightsState[pos] = !lightpuzzlemanager.lightsState[pos];
+        lightpuzzlemanager.lightsState[pos] = !lightpuzzlemanager.lightsState[pos];
     }
 
     void changerCombo1()//переворачивание значений булов лампочек на основе комбо
