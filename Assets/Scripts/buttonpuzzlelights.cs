@@ -169,4 +169,5 @@ public class buttonpuzzlelights : MonoBehaviour
             puzzleBoolSwitch(4);
     }
 
+   
 }

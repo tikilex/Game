@@ -9,7 +9,7 @@ public class DigitalDisplay : MonoBehaviour
 {
     [SerializeField]
     private Sprite[] digits;
-
+    private int lifes = 3;
     [SerializeField]
     private Image[] characters;
 
@@ -29,7 +29,7 @@ public class DigitalDisplay : MonoBehaviour
 
     private void AddDigitToCodeSequence(string digitEntered)
     {
-        if(codeSequence.Length < 4)
+        if (codeSequence.Length < 4)
         {
             switch (digitEntered)
             {
@@ -124,14 +124,20 @@ public class DigitalDisplay : MonoBehaviour
 
     private void CheckResults()
     {
-        if(codeSequence == GlobalValues.rightCodeSequence)
+        if (codeSequence == GlobalValues.rightCodeSequence)
         {
             SceneManager.UnloadSceneAsync(12);
-            GlobalValues.canMove=true;
-            GlobalValues.canvasStatus=true;
+            GlobalValues.canMove = true;
+            GlobalValues.canvasStatus = true;
         }
         else
         {
+            lifes--;
+            if (lifes == 0)
+            {
+                SoundManager.PlaySound("boom");
+                StartCoroutine(waitForSec());
+            }
             ResetDisplay();
         }
     }
@@ -148,5 +154,12 @@ public class DigitalDisplay : MonoBehaviour
     private void OnDestroy()
     {
         PushTheButton.ButtonPressed -= AddDigitToCodeSequence;
+    }
+
+    IEnumerator waitForSec()
+    {
+        yield return new WaitForSecondsRealtime(0.9f);
+        SceneManager.UnloadSceneAsync(12);
+        SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
     }
 }

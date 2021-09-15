@@ -43,6 +43,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e76da8f6fe5f1f34eb6a09e27de4cfcf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSoundsVolume: 10
+  playerSoundsVolume: 6
   otherSoundsVolume: 10
   musicVolume: 10

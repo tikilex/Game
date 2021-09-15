@@ -13,11 +13,11 @@ public class SoundManager : MonoBehaviour
     public static AudioClip step5;
     public static AudioClip drop;
     public static AudioClip longfall;
-
+    public static AudioClip coin;
+    public static AudioClip boom;
     public static AudioSource playerSrc;
     public static AudioSource musicSrc;
     public static AudioSource worldSrc;
-
     public int playerSoundsVolume;
     public int otherSoundsVolume;
     public int musicVolume;
@@ -33,6 +33,8 @@ public class SoundManager : MonoBehaviour
         step5 = Resources.Load<AudioClip>("step5");
         drop = Resources.Load<AudioClip>("drop");
         longfall = Resources.Load<AudioClip>("longfall");
+        boom = Resources.Load<AudioClip>("boom");
+        coin = Resources.Load<AudioClip>("coin");
         playerSrc = gameObject.AddComponent<AudioSource>();
         musicSrc = gameObject.AddComponent<AudioSource>();
         worldSrc = gameObject.AddComponent<AudioSource>();
@@ -128,7 +130,7 @@ public class SoundManager : MonoBehaviour
                 playerSrc.PlayOneShot(death);
                 break;
             case "door":
-                playerSrc.PlayOneShot(door);
+                worldSrc.PlayOneShot(door);
                 break;
             case "step1":
                 playerSrc.PlayOneShot(step1);
@@ -151,7 +153,14 @@ public class SoundManager : MonoBehaviour
             case "longfall":
                 playerSrc.PlayOneShot(longfall);
                 break;
+            case "boom":
+                playerSrc.PlayOneShot(boom);
+                break;
+            case "coin":
+                worldSrc.PlayOneShot(coin);
+                break;
             default:
+                Debug.Log("Ошибка загрузки звука!");
                 break;
         }
     }
