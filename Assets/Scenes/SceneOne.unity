@@ -3671,6 +3671,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1211451793 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2625704514854842746, guid: 7187c689b2ed8ad4da81cf09052382c8,
+    type: 3}
+  m_PrefabInstance: {fileID: 4241103455155690529}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1280337167
 GameObject:
   m_ObjectHideFlags: 0
@@ -6956,12 +6968,12 @@ PrefabInstance:
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -27.628025
+      value: -28.345098
       objectReference: {fileID: 0}
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 14.60338
+      value: 14.602848
       objectReference: {fileID: 0}
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}
@@ -7066,11 +7078,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1794547972}
     m_Modifications:
+    - target: {fileID: 9105128496476785415, guid: 84bf5c0b0f2706f40ae6d8a501336321,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 11.98
+      objectReference: {fileID: 0}
     - target: {fileID: 9105128496476785417, guid: 84bf5c0b0f2706f40ae6d8a501336321,
         type: 3}
       propertyPath: slider
       value: 
       objectReference: {fileID: 1118332271}
+    - target: {fileID: 9105128496476785417, guid: 84bf5c0b0f2706f40ae6d8a501336321,
+        type: 3}
+      propertyPath: timeText
+      value: 
+      objectReference: {fileID: 1211451793}
     - target: {fileID: 9105128496476785417, guid: 84bf5c0b0f2706f40ae6d8a501336321,
         type: 3}
       propertyPath: levelToLoad

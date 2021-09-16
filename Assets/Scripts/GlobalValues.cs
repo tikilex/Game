@@ -16,4 +16,6 @@ public class GlobalValues : MonoBehaviour
     public static bool buttonState2 = true;
     public static bool buttonState3 = true;
     public static bool buttonState4 = true;
+
+    public static bool TimerOn = true;
 }

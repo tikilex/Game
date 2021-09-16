@@ -8,7 +8,8 @@ using UnityEngine.UI;
 
 
 public class ExitTrigger : MonoBehaviour
-{
+{   
+    [SerializeField] private Text timeText;
     public static bool coinTaken = false;
 
     public static int mins = 0;
@@ -21,13 +22,10 @@ public class ExitTrigger : MonoBehaviour
 
     public int CurrentLvl = 0;
 
-    private bool timerON = false;
-
     private int clockPulse = 0;
 
     private void Start()
     {
-        timerON = true;
         animator = GetComponent<Animator>();
     }
     public void FadeToLevel()
@@ -47,7 +45,7 @@ public class ExitTrigger : MonoBehaviour
 
     private void FixedUpdate()
     {   
-        if (timerON && clockPulse == 59)
+        if (GlobalValues.TimerOn && clockPulse == 59)
         {   
             clockPulse = 0;
             secs++;
@@ -59,6 +57,13 @@ public class ExitTrigger : MonoBehaviour
             Debug.Log(mins+":"+secs);
         }
         clockPulse++;
+        timeText.text = (mins < 10?"0":"") + mins + ":" + (secs < 10 ? "0" : "") + secs;
+        if (!GlobalValues.TimerOn){
+            clockPulse = 0;
+            secs = 0;
+            mins = 0;
+            GlobalValues.TimerOn = true;
+        }
     }
     IEnumerator LoadingScreenOnFade()
     {

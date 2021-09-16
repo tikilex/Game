@@ -13,6 +13,7 @@ namespace UnityStandardAssets._2D
             {
                 SoundManager.PlaySound("death");
                 SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
+                GlobalValues.TimerOn = false;
             }
              if (other.tag == "SpawnPhysicbox")
             {
