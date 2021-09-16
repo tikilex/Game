@@ -8,13 +8,11 @@ using UnityEngine.UI;
 
 
 public class ExitTrigger : MonoBehaviour
-{   
-    [SerializeField] private Text timeText;
-    public static bool coinTaken = false;
+{
 
-    public static int mins = 0;
+    
 
-    public static int secs = 0;
+
     private Animator animator;
     public Slider slider;
     public GameObject loadingScreen;
@@ -44,24 +42,25 @@ public class ExitTrigger : MonoBehaviour
     }
 
     private void FixedUpdate()
-    {   
+    {
         if (GlobalValues.TimerOn && clockPulse == 59)
-        {   
+        {
             clockPulse = 0;
-            secs++;
-            if (secs > 59)
+            GlobalValues.timerSeconds++;
+            if (GlobalValues.timerSeconds > 59)
             {
-                mins++;
-                secs = 0;
+                GlobalValues.timerMinutes++;
+                GlobalValues.timerSeconds = 0;
             }
-            Debug.Log(mins+":"+secs);
+            Debug.Log(GlobalValues.timerMinutes + ":" + GlobalValues.timerSeconds);
         }
         clockPulse++;
-        timeText.text = (mins < 10?"0":"") + mins + ":" + (secs < 10 ? "0" : "") + secs;
-        if (!GlobalValues.TimerOn){
+
+        if (!GlobalValues.TimerOn)
+        {
             clockPulse = 0;
-            secs = 0;
-            mins = 0;
+            GlobalValues.timerSeconds = 0;
+            GlobalValues.timerMinutes = 0;
             GlobalValues.TimerOn = true;
         }
     }

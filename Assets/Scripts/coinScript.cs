@@ -11,7 +11,7 @@ public class coinScript : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other){
         if(other.tag == "Player"){
             SoundManager.PlaySound("coin");
-            ExitTrigger.coinTaken = true;
+            GlobalValues.coinTaken = true;
             Destroy(coin);
         }
     }
