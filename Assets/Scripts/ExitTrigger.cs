@@ -35,6 +35,7 @@ public class ExitTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            GlobalValues.Reset();
             SceneManager.LoadSceneAsync(levelToLoad);
             StartCoroutine(LoadingScreenOnFade());
         }

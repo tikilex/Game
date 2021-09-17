@@ -23,4 +23,21 @@ public class GlobalValues : MonoBehaviour
 
     public static int timerSeconds = 0;
     public static int timerMinutes = 0;
+
+    public static void Reset()
+    {
+        CubeAlive = true;
+        canMove = true;
+        canvasStatus = true;
+        MechChecker1 = false;
+        MechChecker2 = false;
+        buttonState1 = true;
+        buttonState2 = true;
+        buttonState3 = true;
+        buttonState4 = true;
+        TimerOn = true;
+        coinTaken = false;
+        timerSeconds = 0;
+        timerMinutes = 0;
+    }
 }
