@@ -20,7 +20,7 @@ StartCoroutine(DestroyObj());
 
 IEnumerator DestroyObj()
 {
-yield return new WaitForSeconds(3f);
+yield return new WaitForSeconds(10f);
 hint.SetActive(false);
 }
 }

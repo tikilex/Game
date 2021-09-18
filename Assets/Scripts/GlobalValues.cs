@@ -8,6 +8,10 @@ public class GlobalValues : MonoBehaviour
     public static bool canMove = true;
     public static string rightCodeSequence;
     public static bool canvasStatus = true;
+
+    public static bool UIstateGameplay = true;
+    public static bool UIstateLevelWin = true;
+    public static bool UIstateDeath = true;
     public static int currentPuzzle;
     public static bool MechChecker1 = false;
     public static bool MechChecker2 = false;
@@ -23,6 +27,8 @@ public class GlobalValues : MonoBehaviour
 
     public static int timerSeconds = 0;
     public static int timerMinutes = 0;
+
+    public static int nextLevel = 0;
 
     public static void Reset()
     {

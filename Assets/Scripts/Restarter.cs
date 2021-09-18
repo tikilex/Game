@@ -13,7 +13,7 @@ namespace UnityStandardAssets._2D
             {
                 SoundManager.PlaySound("death");
                 SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
-                GlobalValues.TimerOn = false;
+                GlobalValues.Reset();
             }
              if (other.tag == "SpawnPhysicbox")
             {
@@ -28,6 +28,10 @@ namespace UnityStandardAssets._2D
             {
                    Destroy(other.gameObject);
             }
+        }
+        public static void WinLayerRestartButton(){
+            SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
+            GlobalValues.Reset();
         }
     }
 }

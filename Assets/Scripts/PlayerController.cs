@@ -45,6 +45,11 @@ public class PlayerController : MonoBehaviour
 
         moveInput = joystick.Horizontal;
         moveInputKeyboard = Input.GetAxis("Horizontal");//Прекрепил W/A и горизантальные стрелки через юнити
+        if(!GlobalValues.UIstateGameplay){
+            GlobalValues.canMove = false;
+            moveInput = 0;
+            moveInputKeyboard = 0;
+        }
         if (GlobalValues.canMove == true && ((moveInput > deadzone || moveInput < minusDeadzone) || moveInputKeyboard != 0))//1000 и одно условие что бы мёртвая зона стика работала
 
         {

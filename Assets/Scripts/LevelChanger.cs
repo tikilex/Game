@@ -20,16 +20,21 @@ public class LevelChanger : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        GlobalValues.UIstateGameplay = true;
+        GlobalValues.UIstateLevelWin = false;
     }
 
     void OnTriggerEnter2D(Collider2D other)
-   {
-       if(other.tag == "Player")
-       {
-           SceneManager.LoadSceneAsync(levelToLoad);
-           StartCoroutine(LoadingScreenOnFade());
-       }
-   }
+    {
+        if (other.tag == "Player")
+        {   
+            GlobalValues.nextLevel = levelToLoad;
+            GlobalValues.UIstateLevelWin = true;
+            GlobalValues.UIstateGameplay = false;
+            //SceneManager.LoadSceneAsync(GlobalValues.nextLevel);
+            //StartCoroutine(LoadingScreenOnFade());
+        }
+    }
     public void FadeToLevel()
     {
         animator.SetTrigger("fade");
@@ -44,13 +49,19 @@ public class LevelChanger : MonoBehaviour
     {
         AsyncOperation operation = SceneManager.LoadSceneAsync(levelToLoad);
         loadingScreen.SetActive(true);
-        while(!operation.isDone)
+        while (!operation.isDone)
         {
-           float progress = Mathf.Clamp01(operation.progress/.9f);
-           yield return null;
+            float progress = Mathf.Clamp01(operation.progress / .9f);
+            yield return null;
         }
     }
-    
-    
+
+    public static void WinLayerButtonNext()
+    {
+        SceneManager.LoadScene(GlobalValues.nextLevel);
+        GlobalValues.Reset();
+    }
+
+
 
 }

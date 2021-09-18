@@ -133,25 +133,25 @@ public class SoundManager : MonoBehaviour
                 worldSrc.PlayOneShot(door);
                 break;
             case "step1":
-                playerSrc.PlayOneShot(step1);
+                playerSrc.PlayOneShot(step1, 0.1F);
                 break;
             case "step2":
-                playerSrc.PlayOneShot(step2);
+                playerSrc.PlayOneShot(step2, 0.1F);
                 break;
             case "step3":
-                playerSrc.PlayOneShot(step3);
+                playerSrc.PlayOneShot(step3, 0.1F);
                 break;
             case "step4":
-                playerSrc.PlayOneShot(step4);
+                playerSrc.PlayOneShot(step4, 0.1F);
                 break;
             case "step5":
-                playerSrc.PlayOneShot(step5);
+                playerSrc.PlayOneShot(step5, 0.1F);
                 break;
             case "drop":
                 playerSrc.PlayOneShot(drop);
                 break;
             case "longfall":
-                playerSrc.PlayOneShot(longfall);
+                playerSrc.PlayOneShot(longfall, 3F);
                 break;
             case "boom":
                 playerSrc.PlayOneShot(boom);
