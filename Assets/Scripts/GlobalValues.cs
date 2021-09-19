@@ -8,30 +8,23 @@ public class GlobalValues : MonoBehaviour
     public static bool canMove = true;
     public static string rightCodeSequence;
     public static bool canvasStatus = true;
-
+    public static bool levelCompleted = false;
     public static bool UIstateGameplay = true;
-    public static bool UIstateLevelWin = false;
     public static bool UIstateDeath = false;
     public static int currentPuzzle;
     public static bool MechChecker1 = false;
     public static bool MechChecker2 = false;
-
     public static bool buttonState1 = true;
     public static bool buttonState2 = true;
     public static bool buttonState3 = true;
     public static bool buttonState4 = true;
-
     public static bool TimerOn = true;
-
     public static bool coinTaken = false;
-
     public static int timerSeconds = 0;
     public static int timerMinutes = 0;
-
     public static int nextLevel = 0;
-
-    public static int deathCause = 0 ;//0 ничего 1 падение в воду 2 Шипы 3 неправильный код 3 раза
-
+    public static bool PuzzleFinished = false;
+    public static int deathCause = 0;//0 ничего 1 падение в воду 2 Шипы 3 неправильный код 3 раза
     public static void Reset()
     {
         CubeAlive = true;
@@ -47,5 +40,9 @@ public class GlobalValues : MonoBehaviour
         coinTaken = false;
         timerSeconds = 0;
         timerMinutes = 0;
+        PuzzleFinished = false;
+        UIstateGameplay = true;
+        UIstateDeath = false;
+        levelCompleted = false;
     }
 }

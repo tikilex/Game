@@ -18,6 +18,8 @@ public class UIstater : MonoBehaviour
     //public GameObject DeathLayer; // заготовка для экрана смерти 
     void Start()
     {
+        GlobalValues.UIstateDeath = false;
+        GlobalValues.UIstateGameplay = true;
         Joystick.SetActive(true);
         TimeDisplay.SetActive(true);
         JumpButton.SetActive(true);
@@ -26,8 +28,10 @@ public class UIstater : MonoBehaviour
         PauseLayer.SetActive(false);
     }
     public void PauseLayerCall()
-    {   
+    {
         GlobalValues.canMove = false;
+        GlobalValues.UIstateDeath = false;
+        GlobalValues.UIstateGameplay = false;
         Joystick.SetActive(false);
         TimeDisplay.SetActive(false);
         JumpButton.SetActive(false);
@@ -79,11 +83,10 @@ public class UIstater : MonoBehaviour
     }
 
     public void ClosePause()
-    {   
+    {
         GlobalValues.canMove = true;
         GlobalValues.UIstateDeath = false;
         GlobalValues.UIstateGameplay = true;
-        GlobalValues.UIstateLevelWin = false;
         Joystick.SetActive(true);
         TimeDisplay.SetActive(true);
         JumpButton.SetActive(true);
@@ -95,8 +98,19 @@ public class UIstater : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!GlobalValues.UIstateGameplay && GlobalValues.UIstateLevelWin && !GlobalValues.UIstateDeath)
+        if (GlobalValues.UIstateGameplay && !GlobalValues.UIstateDeath && !GlobalValues.levelCompleted)
+        {
+            Joystick.SetActive(true);
+            TimeDisplay.SetActive(true);
+            JumpButton.SetActive(true);
+            MenuButton.SetActive(true);
+            WinLayer.SetActive(false);
+            PauseLayer.SetActive(false);
+        }
+
+        if (!GlobalValues.UIstateGameplay && !GlobalValues.UIstateDeath && GlobalValues.levelCompleted){
             WinLayerCall();
+        }
 
         if (GlobalValues.UIstateDeath)
         {

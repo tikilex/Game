@@ -21,7 +21,6 @@ public class LevelChanger : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         GlobalValues.UIstateGameplay = true;
-        GlobalValues.UIstateLevelWin = false;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -29,7 +28,6 @@ public class LevelChanger : MonoBehaviour
         if (other.tag == "Player")
         {   
             GlobalValues.nextLevel = levelToLoad;
-            GlobalValues.UIstateLevelWin = true;
             GlobalValues.UIstateGameplay = false;
             //SceneManager.LoadSceneAsync(GlobalValues.nextLevel);
             //StartCoroutine(LoadingScreenOnFade());

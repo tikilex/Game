@@ -21,9 +21,6 @@ public class ExitTrigger : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
-        GlobalValues.UIstateLevelWin = false;
-        GlobalValues.UIstateGameplay = true;
-        GlobalValues.UIstateDeath = false;
         GlobalValues.nextLevel = levelToLoad;
     }
     public void FadeToLevel()
@@ -35,10 +32,9 @@ public class ExitTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-
-            GlobalValues.UIstateLevelWin = true;
             GlobalValues.UIstateGameplay = false;
             GlobalValues.UIstateDeath = false;
+            GlobalValues.levelCompleted = true;
             //Debug.Log("Coin = " + GlobalValues.coinTaken);
             //SceneManager.LoadSceneAsync(levelToLoad);
             //StartCoroutine(LoadingScreenOnFade());
