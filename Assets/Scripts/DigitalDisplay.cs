@@ -7,11 +7,9 @@ using UnityEngine.SceneManagement;
 public class DigitalDisplay : MonoBehaviour
 
 {
-    [SerializeField]
-    private Sprite[] digits;
+    [SerializeField] private Sprite[] digits;
     private int lifes = 3;
-    [SerializeField]
-    private Image[] characters;
+    [SerializeField] private Image[] characters;
 
     private string codeSequence;
 
@@ -129,6 +127,7 @@ public class DigitalDisplay : MonoBehaviour
             SceneManager.UnloadSceneAsync(12);
             GlobalValues.canMove = true;
             GlobalValues.canvasStatus = true;
+            GlobalValues.PuzzleFinished = true;
         }
         else
         {
@@ -161,5 +160,6 @@ public class DigitalDisplay : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.9f);
         SceneManager.UnloadSceneAsync(12);
         SceneManager.LoadScene(SceneManager.GetSceneAt(0).name);
+        GlobalValues.Reset();
     }
 }

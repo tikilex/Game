@@ -9,7 +9,6 @@ public class PuzzleTrigger : MonoBehaviour
     public Animator animator;
     public Animator anim;
     public Animator ani;
-    public GameObject puzzle;
     public int levelToLoad;
     public GameObject Canvas;
     public string Code;
