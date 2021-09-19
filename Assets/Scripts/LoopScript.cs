@@ -154,13 +154,10 @@ public class LoopScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void NextLevel()
     {
+        GlobalValues.PuzzleFinished = true;
         SceneManager.UnloadSceneAsync(GlobalValues.currentPuzzle);
         GlobalValues.canMove=true;
         GlobalValues.canvasStatus=true;
