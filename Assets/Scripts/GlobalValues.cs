@@ -10,8 +10,8 @@ public class GlobalValues : MonoBehaviour
     public static bool canvasStatus = true;
 
     public static bool UIstateGameplay = true;
-    public static bool UIstateLevelWin = true;
-    public static bool UIstateDeath = true;
+    public static bool UIstateLevelWin = false;
+    public static bool UIstateDeath = false;
     public static int currentPuzzle;
     public static bool MechChecker1 = false;
     public static bool MechChecker2 = false;
@@ -29,6 +29,8 @@ public class GlobalValues : MonoBehaviour
     public static int timerMinutes = 0;
 
     public static int nextLevel = 0;
+
+    public static int deathCause = 0 ;//0 ничего 1 падение в воду 2 Шипы 3 неправильный код 3 раза
 
     public static void Reset()
     {

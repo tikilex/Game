@@ -28,7 +28,7 @@ public class PuzzleTrigger : MonoBehaviour
             SceneManager.LoadSceneAsync(levelToLoad, LoadSceneMode.Additive);
             _isFinished = true;
             GlobalValues.canMove = false;
-            //Canvas.SetActive(false);
+            Canvas.SetActive(false);
         }
     }
     public void FixedUpdate()

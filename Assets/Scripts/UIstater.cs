@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class UIstater : MonoBehaviour
 {
@@ -8,27 +10,71 @@ public class UIstater : MonoBehaviour
     public GameObject Joystick;
     public GameObject JumpButton;
     public GameObject TimeDisplay;
-    public GameObject MenuButton;
-    //{1 layer}
-
-
+    public GameObject MenuButton;//{1 layer}
     public GameObject WinLayer;//{2 layer}
-
+    public GameObject PauseLayer;//{3 layer}
+    public GameObject DeathLayer;
+    [SerializeField] private Text DeathText;
     //public GameObject DeathLayer; // заготовка для экрана смерти 
-    void Start(){
+    void Start()
+    {
         Joystick.SetActive(true);
         TimeDisplay.SetActive(true);
         JumpButton.SetActive(true);
         MenuButton.SetActive(true);
         WinLayer.SetActive(false);
+        PauseLayer.SetActive(false);
     }
-    void WinLayerCall()
+    public void PauseLayerCall()
     {
         Joystick.SetActive(false);
         TimeDisplay.SetActive(false);
         JumpButton.SetActive(false);
         MenuButton.SetActive(false);
+        PauseLayer.SetActive(true);
+        WinLayer.SetActive(false);
+        DeathLayer.SetActive(false);
+    }
+
+    public void WinLayerCall()
+    {
+        Joystick.SetActive(false);
+        TimeDisplay.SetActive(false);
+        JumpButton.SetActive(false);
+        MenuButton.SetActive(false);
+        PauseLayer.SetActive(false);
         WinLayer.SetActive(true);
+        DeathLayer.SetActive(false);
+    }
+
+    public void DeathLayerCall()
+    {
+        switch (GlobalValues.deathCause)
+        {//0 ничего 1 падение в воду 2 Шипы 3 неправильный код 3 раза
+            case 0:
+                DeathText.text = "You died... somehow";
+                break;
+            case 1:
+                DeathText.text = "You are dead! Dont trust thoose waters!";
+                break;
+            case 2:
+                DeathText.text = "You are dead! Thoose spikes are dangerous!";
+                break;
+            case 3:
+                DeathText.text = "You are dead! This code pad is rigged!";
+                break;
+            default:
+                DeathText.text = "You died... somehow";
+                break;
+        }
+        Debug.Log(DeathText.text);
+        Joystick.SetActive(false);
+        TimeDisplay.SetActive(false);
+        JumpButton.SetActive(false);
+        MenuButton.SetActive(false);
+        PauseLayer.SetActive(false);
+        WinLayer.SetActive(false);
+        DeathLayer.SetActive(true);
     }
     // void SwitchStateForLayer(int layer,bool state){
     //     switch(layer){
@@ -44,8 +90,13 @@ public class UIstater : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if (!GlobalValues.UIstateGameplay && GlobalValues.UIstateLevelWin)
+        if (!GlobalValues.UIstateGameplay && GlobalValues.UIstateLevelWin && !GlobalValues.UIstateDeath)
             WinLayerCall();
+
+        if (GlobalValues.UIstateDeath){
+            DeathLayerCall();
+            GlobalValues.UIstateGameplay = false;
+        }
     }
 
 

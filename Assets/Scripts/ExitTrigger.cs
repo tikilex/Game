@@ -9,10 +9,6 @@ using UnityEngine.UI;
 
 public class ExitTrigger : MonoBehaviour
 {
-
-    
-
-
     private Animator animator;
     public Slider slider;
     public GameObject loadingScreen;
@@ -25,6 +21,9 @@ public class ExitTrigger : MonoBehaviour
     private void Start()
     {
         animator = GetComponent<Animator>();
+        GlobalValues.UIstateLevelWin = false;
+        GlobalValues.UIstateGameplay = true;
+        GlobalValues.UIstateDeath = false;
         GlobalValues.nextLevel = levelToLoad;
     }
     public void FadeToLevel()
@@ -36,10 +35,11 @@ public class ExitTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
-            
+
             GlobalValues.UIstateLevelWin = true;
             GlobalValues.UIstateGameplay = false;
-            Debug.Log("Coin = " + GlobalValues.coinTaken);
+            GlobalValues.UIstateDeath = false;
+            //Debug.Log("Coin = " + GlobalValues.coinTaken);
             //SceneManager.LoadSceneAsync(levelToLoad);
             //StartCoroutine(LoadingScreenOnFade());
         }
@@ -57,7 +57,7 @@ public class ExitTrigger : MonoBehaviour
                 GlobalValues.timerMinutes++;
                 GlobalValues.timerSeconds = 0;
             }
-            Debug.Log(GlobalValues.timerMinutes + ":" + GlobalValues.timerSeconds);
+            //Debug.Log(GlobalValues.timerMinutes + ":" + GlobalValues.timerSeconds);
         }
         clockPulse++;
 

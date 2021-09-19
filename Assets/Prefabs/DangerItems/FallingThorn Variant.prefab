@@ -33,6 +33,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e053b0a94752146e79954ce4df1b5565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  deathCause: 2
 --- !u!1001 &174201705255414310
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -134,6 +135,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FlipY
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7593208021963682457, guid: 206cc0460eef48a479e1736f6721b87c,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 7593208021963682438, guid: 206cc0460eef48a479e1736f6721b87c, type: 3}

@@ -22,18 +22,17 @@ public class lightpuzzlemanager : MonoBehaviour
     {
         if (lightsState[0] && lightsState[1] && lightsState[2] && lightsState[3] && lightsState[4])
         {
-            is_Finished = true;
-            Debug.Log("You won!!!");
+            //Debug.Log("You won!!!");
+            //SoundManager.PlaySound("coin");
+            StartCoroutine(waitForSec());
         }
     }
 
-    private void CheckResults()
+    IEnumerator waitForSec()
     {
-        if (is_Finished)
-        {
-            SceneManager.UnloadSceneAsync(20);
-            GlobalValues.canMove = true;
-            GlobalValues.canvasStatus = true;
-        }
+        yield return new WaitForSecondsRealtime(1f);
+        SceneManager.UnloadSceneAsync(20);
+        GlobalValues.canMove = true;
+        GlobalValues.canvasStatus = true;
     }
 }
