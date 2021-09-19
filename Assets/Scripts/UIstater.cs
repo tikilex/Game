@@ -26,7 +26,8 @@ public class UIstater : MonoBehaviour
         PauseLayer.SetActive(false);
     }
     public void PauseLayerCall()
-    {
+    {   
+        GlobalValues.canMove = false;
         Joystick.SetActive(false);
         TimeDisplay.SetActive(false);
         JumpButton.SetActive(false);
@@ -76,16 +77,20 @@ public class UIstater : MonoBehaviour
         WinLayer.SetActive(false);
         DeathLayer.SetActive(true);
     }
-    // void SwitchStateForLayer(int layer,bool state){
-    //     switch(layer){
-    //         case 1:
-    //         Joystick.SetActive(state);
-    //         TimeDisplay.SetActive(state);
-    //         JumpButton.SetActive(state);
-    //         MenuButton.SetActive(state);
-    //         WinLayer.SetActive(true);
-    //     }
-    // }
+
+    public void ClosePause()
+    {   
+        GlobalValues.canMove = true;
+        GlobalValues.UIstateDeath = false;
+        GlobalValues.UIstateGameplay = true;
+        GlobalValues.UIstateLevelWin = false;
+        Joystick.SetActive(true);
+        TimeDisplay.SetActive(true);
+        JumpButton.SetActive(true);
+        MenuButton.SetActive(true);
+        WinLayer.SetActive(false);
+        PauseLayer.SetActive(false);
+    }
 
     // Update is called once per frame
     void FixedUpdate()
@@ -93,7 +98,8 @@ public class UIstater : MonoBehaviour
         if (!GlobalValues.UIstateGameplay && GlobalValues.UIstateLevelWin && !GlobalValues.UIstateDeath)
             WinLayerCall();
 
-        if (GlobalValues.UIstateDeath){
+        if (GlobalValues.UIstateDeath)
+        {
             DeathLayerCall();
             GlobalValues.UIstateGameplay = false;
         }
