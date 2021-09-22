@@ -25,8 +25,6 @@ public class PlayerController : MonoBehaviour
 
     public Animator animator;
 
-    public float deadzone = 0;
-    private float minusDeadzone;
     private bool wasAirborn = true;
 
     private int airbornTime = 0;
@@ -35,7 +33,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         transform.position = pos.initValue;
-        minusDeadzone = deadzone * -1;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
     }
@@ -50,7 +47,7 @@ public class PlayerController : MonoBehaviour
             moveInput = 0;
             moveInputKeyboard = 0;
         }
-        if (GlobalValues.canMove == true && ((moveInput > deadzone || moveInput < minusDeadzone) || moveInputKeyboard != 0))//1000 и одно условие что бы мёртвая зона стика работала
+        if (GlobalValues.canMove == true)
 
         {
             //Debug.Log(moveInput);
@@ -74,7 +71,7 @@ public class PlayerController : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y);
             animator.SetBool("isRunning", false);
         }
-        if (((moveInput > deadzone || moveInput < minusDeadzone) || moveInputKeyboard != 0) && GlobalValues.canMove == true && isGrounded == true)
+        if ( GlobalValues.canMove == true && isGrounded == true && (moveInput!=0 || moveInputKeyboard!=0))
         {
             animator.SetBool("isRunning", true);
             CurrentFrame += 0.4;
@@ -85,7 +82,10 @@ public class PlayerController : MonoBehaviour
             StartCoroutine(StepSound());
         }
         else
+        {
             CurrentFrame = 0;
+            animator.SetBool("isRunning", false);
+        }
 
         if (Input.GetButton("Jump") == true)
         {

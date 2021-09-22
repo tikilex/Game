@@ -68,4 +68,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/puzzleLightsandButtons.unity
     guid: 5cf546f038af7474c9d622f9b39caef9
+  - enabled: 1
+    path: Assets/Scenes/Scene15.unity
+    guid: a5d70324897814144aeae2d24aa03aa1
   m_configObjects: {}

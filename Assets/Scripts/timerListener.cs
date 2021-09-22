@@ -12,7 +12,6 @@ public class timerListener : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
         timeText.text = (GlobalValues.timerMinutes < 10 ? "0" : "") + GlobalValues.timerMinutes + ":" + (GlobalValues.timerSeconds < 10 ? "0" : "") + GlobalValues.timerSeconds;
     }
 }
