@@ -71,4 +71,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene15.unity
     guid: a5d70324897814144aeae2d24aa03aa1
+  - enabled: 1
+    path: Assets/Scenes/Scene16.unity
+    guid: c68b1048fd1e9fc499e5c7562a843322
   m_configObjects: {}
