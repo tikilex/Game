@@ -151,7 +151,7 @@ RectTransform:
   m_GameObject: {fileID: 72064537}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2.7957883, y: 4.3863072, z: 2.7957883}
   m_Children:
   - {fileID: 1075733533}
   - {fileID: 132189134}
@@ -221,10 +221,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb0e34c4a1ee7904fb6d11c6cb614103, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttonIndex: -1
-  combo1: 
-  combo2: 
-  buttonState: 1
 --- !u!1001 &132189133
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1233,7 +1229,7 @@ RectTransform:
   m_GameObject: {fileID: 1489312746}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.3576809, y: 0.22798222, z: 0.3576809}
   m_Children:
   - {fileID: 72064538}
   m_Father: {fileID: 1012533345}
@@ -1241,7 +1237,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0.000044228, y: -0.00013268}
   m_SizeDelta: {x: 10000, y: 10000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1489312748
@@ -1257,14 +1253,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.15283018, g: 0.16981131, b: 0.15330651, a: 1}
+  m_Color: {r: 0.7735849, g: 0.7735849, b: 0.7735849, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 79d3dfae83c985946813e07d623d60b7, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d876184741e00f945af64cd4e14cdcb5, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
