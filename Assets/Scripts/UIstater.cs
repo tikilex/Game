@@ -6,6 +6,7 @@ using UnityEngine.UI;
 
 public class UIstater : MonoBehaviour
 {
+    public bool isPuzzle = false;
     // Start is called before the first frame update
     public GameObject Joystick;
     public GameObject JumpButton;
@@ -18,17 +19,32 @@ public class UIstater : MonoBehaviour
     //public GameObject DeathLayer; // заготовка для экрана смерти 
     void Start()
     {
-        GlobalValues.UIstateDeath = false;
-        GlobalValues.UIstateGameplay = true;
-        Joystick.SetActive(true);
-        TimeDisplay.SetActive(true);
-        JumpButton.SetActive(true);
-        MenuButton.SetActive(true);
-        WinLayer.SetActive(false);
-        PauseLayer.SetActive(false);
+        if (isPuzzle == false)
+        {
+            GlobalValues.UIstateDeath = false;
+            GlobalValues.UIstateGameplay = true;
+            Joystick.SetActive(true);
+            TimeDisplay.SetActive(true);
+            JumpButton.SetActive(true);
+            MenuButton.SetActive(true);
+            WinLayer.SetActive(false);
+            PauseLayer.SetActive(false);
+        }
+        else
+        {
+            GlobalValues.UIstateDeath = false;
+            GlobalValues.UIstateGameplay = true;
+            Joystick.SetActive(false);
+            TimeDisplay.SetActive(true);
+            JumpButton.SetActive(false);
+            MenuButton.SetActive(true);
+            WinLayer.SetActive(false);
+            PauseLayer.SetActive(false);
+        }
     }
     public void PauseLayerCall()
     {
+
         GlobalValues.canMove = false;
         GlobalValues.UIstateDeath = false;
         GlobalValues.UIstateGameplay = false;
@@ -84,15 +100,30 @@ public class UIstater : MonoBehaviour
 
     public void ClosePause()
     {
-        GlobalValues.canMove = true;
-        GlobalValues.UIstateDeath = false;
-        GlobalValues.UIstateGameplay = true;
-        Joystick.SetActive(true);
-        TimeDisplay.SetActive(true);
-        JumpButton.SetActive(true);
-        MenuButton.SetActive(true);
-        WinLayer.SetActive(false);
-        PauseLayer.SetActive(false);
+        if (isPuzzle == false)
+        {
+            GlobalValues.canMove = true;
+            GlobalValues.UIstateDeath = false;
+            GlobalValues.UIstateGameplay = true;
+            Joystick.SetActive(true);
+            TimeDisplay.SetActive(true);
+            JumpButton.SetActive(true);
+            MenuButton.SetActive(true);
+            WinLayer.SetActive(false);
+            PauseLayer.SetActive(false);
+        }
+        else
+        {
+            GlobalValues.canMove = true;
+            GlobalValues.UIstateDeath = false;
+            GlobalValues.UIstateGameplay = true;
+            Joystick.SetActive(false);
+            TimeDisplay.SetActive(true);
+            JumpButton.SetActive(false);
+            MenuButton.SetActive(true);
+            WinLayer.SetActive(false);
+            PauseLayer.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -100,12 +131,24 @@ public class UIstater : MonoBehaviour
     {
         if (GlobalValues.UIstateGameplay && !GlobalValues.UIstateDeath && !GlobalValues.levelCompleted)
         {
-            Joystick.SetActive(true);
-            TimeDisplay.SetActive(true);
-            JumpButton.SetActive(true);
-            MenuButton.SetActive(true);
-            WinLayer.SetActive(false);
-            PauseLayer.SetActive(false);
+            if (isPuzzle == false)
+            {
+                Joystick.SetActive(true);
+                TimeDisplay.SetActive(true);
+                JumpButton.SetActive(true);
+                MenuButton.SetActive(true);
+                WinLayer.SetActive(false);
+                PauseLayer.SetActive(false);
+            }
+            else
+            {
+                Joystick.SetActive(false);
+                TimeDisplay.SetActive(false);
+                JumpButton.SetActive(false);
+                MenuButton.SetActive(true);
+                WinLayer.SetActive(false);
+                PauseLayer.SetActive(false);
+            }
         }
 
         if (!GlobalValues.UIstateGameplay && !GlobalValues.UIstateDeath && GlobalValues.levelCompleted){

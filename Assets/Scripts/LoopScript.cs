@@ -24,7 +24,7 @@ public class LoopScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        canvas.SetActive(false);
+        //canvas.SetActive(false);
 
 
         Vector2 dimensions = CheckDimensions();
@@ -39,10 +39,10 @@ public class LoopScript : MonoBehaviour
             puzzle.pieces[(int)piece.transform.position.x, (int)piece.transform.position.y] = piece.GetComponent<piece> ();
         }
 
-        foreach (var item in puzzle.pieces)
-        {
-            Debug.Log(item.gameObject.name);
-        }
+        // foreach (var item in puzzle.pieces)
+        // {
+        //     Debug.Log(item.gameObject.name);
+        // }
 
         puzzle.winValue = GetWinValue();
         Shuffle();

@@ -23,7 +23,9 @@ public class TimerScript : MonoBehaviour
         }
 
         timeText.text = (minutes < 10?"0":"") + minutes + ":" + (seconds < 10 ? "0" : "") + seconds;
+        Debug.Log(timeText.text);
         Invoke(nameof(AddToSecond), 1);
+
     }
 
     public void StopTimer()
