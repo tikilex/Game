@@ -1950,6 +1950,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: doors_0
       objectReference: {fileID: 0}
+    - target: {fileID: 1971551532915942654, guid: 8b30247829bec704db5998c52c681583,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1971551532915942655, guid: 8b30247829bec704db5998c52c681583,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1971551532915942655, guid: 8b30247829bec704db5998c52c681583,
         type: 3}
       propertyPath: m_Controller
@@ -3109,6 +3119,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4705657904770173932, guid: 7806f577287251f48b7356005f72fc75,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4705657904770173935, guid: 7806f577287251f48b7356005f72fc75,
         type: 3}
       propertyPath: m_Name
@@ -3172,12 +3187,12 @@ PrefabInstance:
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -41.618103
+      value: -29.751604
       objectReference: {fileID: 0}
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 12.827632
+      value: 12.800334
       objectReference: {fileID: 0}
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}

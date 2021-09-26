@@ -74,4 +74,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene16.unity
     guid: c68b1048fd1e9fc499e5c7562a843322
+  - enabled: 1
+    path: Assets/Scenes/Loop2.unity
+    guid: fcd66c31822465c43ae4279f178dfb53
+  - enabled: 1
+    path: Assets/Scenes/Loop4.unity
+    guid: 3cfa07ebbd2ec8f4aadc8816143124d4
+  - enabled: 1
+    path: Assets/Scenes/Davin2.unity
+    guid: ce5637714c24759489ac9657b18a574b
+  - enabled: 1
+    path: Assets/Scenes/Davin3.unity
+    guid: 2ad486d98715c1d4498f5c273a0f4efe
   m_configObjects: {}
