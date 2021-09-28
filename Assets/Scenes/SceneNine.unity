@@ -1069,6 +1069,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 1203421993}
   - {fileID: 793608196}
+  PlayerMech: 0
 --- !u!1 &469489734 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6669485753155627971, guid: b80031610f5f42842b96b429601f52eb,
@@ -1874,6 +1875,11 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 1118332271}
+    - target: {fileID: 9105128496476785417, guid: 84bf5c0b0f2706f40ae6d8a501336321,
+        type: 3}
+      propertyPath: CurrentLvl
+      value: 9
+      objectReference: {fileID: 0}
     - target: {fileID: 9105128496476785417, guid: 84bf5c0b0f2706f40ae6d8a501336321,
         type: 3}
       propertyPath: levelToLoad
@@ -2823,6 +2829,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 2139320108}
   - {fileID: 478486796}
+  PlayerMech: 0
 --- !u!1 &1158300971
 GameObject:
   m_ObjectHideFlags: 0
@@ -3015,6 +3022,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 391221696}
   - {fileID: 1776147570}
+  PlayerMech: 0
 --- !u!1 &1203421992
 GameObject:
   m_ObjectHideFlags: 0
@@ -3757,6 +3765,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 1921142682}
   - {fileID: 1489568925}
+  PlayerMech: 0
 --- !u!1001 &1554042875
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4098,6 +4107,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 1566296701}
   - {fileID: 827567935}
+  PlayerMech: 0
 --- !u!1001 &1677375159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4189,6 +4199,7 @@ MonoBehaviour:
   waypoints:
   - {fileID: 620177791}
   - {fileID: 1683970904}
+  PlayerMech: 0
 --- !u!1 &1683970903
 GameObject:
   m_ObjectHideFlags: 0

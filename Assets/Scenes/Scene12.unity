@@ -3398,6 +3398,7 @@ MonoBehaviour:
   speed: 6
   waypoints:
   - {fileID: 1534300813}
+  PlayerMech: 0
 --- !u!4 &839105733 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5450595798962277277, guid: 9347c5a5f40b0ce478ed762ef05bb926,
@@ -4584,6 +4585,11 @@ PrefabInstance:
       propertyPath: slider
       value: 
       objectReference: {fileID: 1118332271}
+    - target: {fileID: 9105128496476785417, guid: 84bf5c0b0f2706f40ae6d8a501336321,
+        type: 3}
+      propertyPath: CurrentLvl
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 9105128496476785417, guid: 84bf5c0b0f2706f40ae6d8a501336321,
         type: 3}
       propertyPath: levelToLoad
@@ -10563,12 +10569,12 @@ PrefabInstance:
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -42.333076
+      value: -48.34345
       objectReference: {fileID: 0}
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 22.574526
+      value: 22.572891
       objectReference: {fileID: 0}
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}

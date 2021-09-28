@@ -8,6 +8,8 @@ public class DeathWall : MonoBehaviour
 
     public Transform[] waypoints;
     private int ArrayIndex;
+    public bool PlayerMech=false;
+    private bool move=false;
 
     void Start()
     {
@@ -17,11 +19,21 @@ public class DeathWall : MonoBehaviour
 
     void Update()
     {
-        if (ArrayIndex == 0)
+        if(PlayerMech == true && move == true)
+        {
+        transform.position = Vector2.MoveTowards(transform.position, waypoints[ArrayIndex].transform.position, speed * Time.deltaTime);
+        CheckWayPoint();  
+        }   
+        if(PlayerMech == false)
         {
             transform.position = Vector2.MoveTowards(transform.position, waypoints[ArrayIndex].transform.position, speed * Time.deltaTime);
-            CheckWayPoint();
+            CheckWayPoint(); 
         }
+    }
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if(other.tag == "Player")
+        move=true;
     }
 
     void CheckWayPoint()
