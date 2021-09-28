@@ -22,6 +22,7 @@ public class ExitTrigger : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         GlobalValues.nextLevel = levelToLoad;
+        GlobalValues.CurrentLvl = CurrentLvl;
     }
     public void FadeToLevel()
     {
@@ -32,9 +33,11 @@ public class ExitTrigger : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            SaveManager.SaveProgress();
             GlobalValues.UIstateGameplay = false;
             GlobalValues.UIstateDeath = false;
             GlobalValues.levelCompleted = true;
+            GlobalValues.TimerOn = false;
             //Debug.Log("Coin = " + GlobalValues.coinTaken);
             //SceneManager.LoadSceneAsync(levelToLoad);
             //StartCoroutine(LoadingScreenOnFade());
@@ -56,14 +59,7 @@ public class ExitTrigger : MonoBehaviour
             //Debug.Log(GlobalValues.timerMinutes + ":" + GlobalValues.timerSeconds);
         }
         clockPulse++;
-
-        if (!GlobalValues.TimerOn)
-        {
-            clockPulse = 0;
-            GlobalValues.timerSeconds = 0;
-            GlobalValues.timerMinutes = 0;
-            GlobalValues.TimerOn = true;
-        }
+        Debug.Log((GlobalValues.timerMinutes < 10 ? "0" : "") + GlobalValues.timerMinutes + ":" + (GlobalValues.timerSeconds < 10 ? "0" : "") + GlobalValues.timerSeconds);
     }
     IEnumerator LoadingScreenOnFade()
     {

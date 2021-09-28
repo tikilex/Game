@@ -14,12 +14,12 @@ public class SaveManager : MonoBehaviour
     // 
     //
     public int buttonID = 0;
-    private string timeMinID = "timeMin";
-    private string timeSecID = "timeSec";
-    private string CoinID = "coin";
-    private string isBeatenID = "coin";
+    private static string timeMinID = "timeMin";
+    private static string timeSecID = "timeSec";
+    private static string CoinID = "coin";
+    private static string isBeatenID = "coin";
 
-    private string ConstructID(string Name, int type, int ID)
+    private static string ConstructID(string Name, int type, int ID)
     {//1 timeMin 2 timeSec 3 Coin 4 isBeated
         string strID = ID.ToString();
         switch (type)
@@ -40,10 +40,11 @@ public class SaveManager : MonoBehaviour
         return Name;
     }
 
-    public void InitialSave()
+    public static void InitialSave()
     {
         if (PlayerPrefs.GetInt("SaveCreated", 404) != 1)
         {
+            Debug.Log("Starting initial saving");
             for (int i = -1; i <= 19; i++)
             {
                 int j = i + 1;
@@ -96,9 +97,26 @@ public class SaveManager : MonoBehaviour
         PlayerPrefs.DeleteAll();
     }
 
-    public void test()
+    public static void SaveProgress()
     {
-
+        GlobalValues.RecordMins = PlayerPrefs.GetInt(ConstructID(timeMinID, 1, GlobalValues.CurrentLvl), 9999999);
+        GlobalValues.RecordSecs = PlayerPrefs.GetInt(ConstructID(timeSecID, 2, GlobalValues.CurrentLvl), 9999999);
+        if(GlobalValues.RecordMins == 0 && GlobalValues.RecordSecs == 0){
+            GlobalValues.RecordMins = 9999999;
+            GlobalValues.RecordSecs = 9999999;
+        }
+        if (GlobalValues.RecordMins >= GlobalValues.timerMinutes)
+            if (GlobalValues.RecordSecs > GlobalValues.timerSeconds)
+            {   
+                GlobalValues.NewRecord = true;
+                PlayerPrefs.SetInt(ConstructID(timeMinID, 1, GlobalValues.CurrentLvl), GlobalValues.timerMinutes);//timeMin
+                PlayerPrefs.SetInt(ConstructID(timeSecID, 2, GlobalValues.CurrentLvl), GlobalValues.timerSeconds);//timeSec
+            }
+        if (GlobalValues.coinTaken)
+            PlayerPrefs.SetInt(ConstructID(CoinID, 3, GlobalValues.CurrentLvl), 1);//Coin
+        else
+            PlayerPrefs.SetInt(ConstructID(CoinID, 3, GlobalValues.CurrentLvl), 0);//Coin
+            PlayerPrefs.SetInt(ConstructID(isBeatenID, 4, GlobalValues.CurrentLvl), 1);//isBeaten
     }
 
     public void FakeDataPush()
@@ -113,4 +131,5 @@ public class SaveManager : MonoBehaviour
         PlayerPrefs.SetInt(ConstructID(CoinID, 3, ID), coin);//Coin
         PlayerPrefs.SetInt(ConstructID(isBeatenID, 4, ID), isBeated);//isBeaten
     }
+
 }

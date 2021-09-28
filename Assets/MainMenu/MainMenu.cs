@@ -11,6 +11,10 @@ public class MainMenu : MonoBehaviour
         SceneManager.LoadScene(Level);
     }
 
+    void Start(){
+        SaveManager.InitialSave();
+    }
+
     public void ExitGame()
     {
         Debug.Log("Exit!");

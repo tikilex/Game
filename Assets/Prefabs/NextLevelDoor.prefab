@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9105128496476785414}
   - component: {fileID: 9105128496476785417}
   - component: {fileID: 1835325688663998732}
+  - component: {fileID: 7221044786121376055}
   m_Layer: 0
   m_Name: Exit
   m_TagString: Untagged
@@ -74,6 +75,7 @@ MonoBehaviour:
   slider: {fileID: 0}
   loadingScreen: {fileID: 0}
   levelToLoad: 7
+  CurrentLvl: 3
 --- !u!212 &1835325688663998732
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -125,6 +127,19 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &7221044786121376055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9105128496476785416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15cfec1da05e91d47b8c971a45438483, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  buttonID: 0
 --- !u!1 &9105128496509668862
 GameObject:
   m_ObjectHideFlags: 0
