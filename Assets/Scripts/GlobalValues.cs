@@ -24,7 +24,7 @@ public class GlobalValues : MonoBehaviour
     public static int timerMinutes = 0;
     public static int nextLevel = 0;
     public static bool PuzzleFinished = false;
-    public static int deathCause = 0;//0 ничего 1 падение в воду 2 Шипы 3 неправильный код 3 раза
+    public static int deathCause = 0;//0 ничего 1 падение в воду 2 Шипы 3 неправильный код 3 раза 4 пилы
     public static void Reset()
     {
         CubeAlive = true;

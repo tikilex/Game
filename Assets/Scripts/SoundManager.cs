@@ -15,6 +15,7 @@ public class SoundManager : MonoBehaviour
     public static AudioClip longfall;
     public static AudioClip coin;
     public static AudioClip boom;
+    public static AudioClip button;
     public static AudioSource playerSrc;
     public static AudioSource musicSrc;
     public static AudioSource worldSrc;
@@ -35,6 +36,7 @@ public class SoundManager : MonoBehaviour
         longfall = Resources.Load<AudioClip>("longfall");
         boom = Resources.Load<AudioClip>("boom");
         coin = Resources.Load<AudioClip>("coin");
+        button = Resources.Load<AudioClip>("button");
         playerSrc = gameObject.AddComponent<AudioSource>();
         musicSrc = gameObject.AddComponent<AudioSource>();
         worldSrc = gameObject.AddComponent<AudioSource>();
@@ -158,6 +160,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case "coin":
                 worldSrc.PlayOneShot(coin);
+                break;
+            case "button":
+                worldSrc.PlayOneShot(button, 0.5F);
                 break;
             default:
                 Debug.Log("Ошибка загрузки звука!");

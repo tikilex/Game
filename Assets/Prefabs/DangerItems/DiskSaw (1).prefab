@@ -114,7 +114,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e053b0a94752146e79954ce4df1b5565, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathCause: 2
+  deathCause: 4
 --- !u!95 &2073369718
 Animator:
   serializedVersion: 3

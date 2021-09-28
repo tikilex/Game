@@ -1810,7 +1810,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: -269, y: 137}
+  m_AnchoredPosition: {x: -173, y: 137}
   m_SizeDelta: {x: 200, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2271176129734724263
@@ -1854,7 +1854,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Time:'
+  m_Text: Time:00.00
 --- !u!114 &5748991898219605971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2550,8 +2550,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1376300196337667362, guid: 7be825973d97d30448e939e5cd2f5030,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: 99c9546a380e44b4eae70b5ff9c5ba64, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2590,10 +2589,9 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 4868201622611155788, guid: 7be825973d97d30448e939e5cd2f5030,
+    m_HighlightedSprite: {fileID: 21300000, guid: 99c9546a380e44b4eae70b5ff9c5ba64,
       type: 3}
-    m_PressedSprite: {fileID: 4868201622611155788, guid: 7be825973d97d30448e939e5cd2f5030,
-      type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 40e3b35416add194caef244d3096c0f8, type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
   m_AnimationTriggers:
@@ -2831,7 +2829,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 5673439036904875035, guid: 7be825973d97d30448e939e5cd2f5030,
+  m_Sprite: {fileID: -8698056814644060325, guid: afe8520926f109c46899ba43d5ab0761,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -2861,7 +2859,7 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 2
+  m_Transition: 0
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
@@ -2872,7 +2870,7 @@ MonoBehaviour:
     m_FadeDuration: 0.1
   m_SpriteState:
     m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 9017547302892446612, guid: 7be825973d97d30448e939e5cd2f5030,
+    m_PressedSprite: {fileID: -8698056814644060325, guid: afe8520926f109c46899ba43d5ab0761,
       type: 3}
     m_SelectedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -3285,7 +3283,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 1739439745201083990, guid: 7be825973d97d30448e939e5cd2f5030,
+  m_Sprite: {fileID: 7412651780431617912, guid: afe8520926f109c46899ba43d5ab0761,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0

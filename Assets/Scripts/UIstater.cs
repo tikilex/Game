@@ -84,6 +84,9 @@ public class UIstater : MonoBehaviour
             case 3:
                 DeathText.text = "You are dead! This code pad is rigged!";
                 break;
+            case 4:
+                DeathText.text = "You are dead! Sawed into meat salad!";
+                break;
             default:
                 DeathText.text = "You died... somehow";
                 break;

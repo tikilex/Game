@@ -10,7 +10,7 @@ public class timerListener : MonoBehaviour
     [SerializeField] private Text timeText;
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         timeText.text = (GlobalValues.timerMinutes < 10 ? "0" : "") + GlobalValues.timerMinutes + ":" + (GlobalValues.timerSeconds < 10 ? "0" : "") + GlobalValues.timerSeconds;
     }

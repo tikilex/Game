@@ -24,5 +24,6 @@ public class PushTheButton : MonoBehaviour
     private void ButtonClicked()
     {
         ButtonPressed(buttonValue);
+        SoundManager.PlaySound("button");
     }
 }
