@@ -1,0 +1,116 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class SaveManager : MonoBehaviour
+{
+
+    // ID = номер уровня
+    // timeMinID
+    // timeSecID
+    // CoinID
+    // isBeatenID
+    // 
+    // 
+    //
+    public int buttonID = 0;
+    private string timeMinID = "timeMin";
+    private string timeSecID = "timeSec";
+    private string CoinID = "coin";
+    private string isBeatenID = "coin";
+
+    private string ConstructID(string Name, int type, int ID)
+    {//1 timeMin 2 timeSec 3 Coin 4 isBeated
+        string strID = ID.ToString();
+        switch (type)
+        {
+            case 1:
+                Name = "timeMin" + strID;
+                break;
+            case 2:
+                Name = "timeSec" + strID;
+                break;
+            case 3:
+                Name = "Coin" + strID;
+                break;
+            case 4:
+                Name = "isBeaten" + strID;
+                break;
+        }
+        return Name;
+    }
+
+    public void InitialSave()
+    {
+        if (PlayerPrefs.GetInt("SaveCreated", 404) != 1)
+        {
+            for (int i = -1; i <= 19; i++)
+            {
+                int j = i + 1;
+                PlayerPrefs.SetInt(ConstructID(timeMinID, 1, j), 0);//timeMin
+                PlayerPrefs.SetInt(ConstructID(timeSecID, 2, j), 0);//timeSec
+                PlayerPrefs.SetInt(ConstructID(CoinID, 3, j), 0);//Coin
+                PlayerPrefs.SetInt(ConstructID(isBeatenID, 4, j), 0);//isBeaten
+            }
+            PlayerPrefs.SetInt("SaveCreated", 1);
+            PlayerPrefs.SetInt(ConstructID(isBeatenID, 4, 0), 1);//isBeaten
+        }
+    }
+
+    public void CreateCheesySave()
+    {
+        for (int i = -1; i <= 19; i++)
+        {
+            int j = i + 1;
+            PlayerPrefs.SetInt(ConstructID(timeMinID, 1, j), 1);//timeMin
+            PlayerPrefs.SetInt(ConstructID(timeSecID, 2, j), 1);//timeSec
+            PlayerPrefs.SetInt(ConstructID(CoinID, 3, j), 0);//Coin
+            PlayerPrefs.SetInt(ConstructID(isBeatenID, 4, j), 1);//isBeaten
+        }
+        PlayerPrefs.SetInt("SaveCreated", 1);
+    }
+
+    public void DumpSave()
+    {
+        if (PlayerPrefs.GetInt("SaveCreated", 404) == 1)
+        {
+            for (int i = 0; i <= 19; i++)
+            {
+                int j = i + 1;
+                int timeminIdDUMP = PlayerPrefs.GetInt(ConstructID(timeMinID, 1, j), 404);//timeMin
+                int timesecIdDUMP = PlayerPrefs.GetInt(ConstructID(timeSecID, 2, j), 404);//timeSec
+                int coinIdDUMP = PlayerPrefs.GetInt(ConstructID(CoinID, 3, j), 404);//Coin
+                int isBeatedIdDUMP = PlayerPrefs.GetInt(ConstructID(isBeatenID, 4, j), 404);//isBeaten
+                Debug.Log("SaveID =" + j + " TimeMin = " + timeminIdDUMP + " TimeSec = " + timesecIdDUMP + " Coin = " + coinIdDUMP + " isBeaten = " + isBeatedIdDUMP);
+            }
+        }
+        else
+        {
+            Debug.Log("NO FILES!!!!");
+            PlayerPrefs.SetInt("SaveCreated", 0);
+        }
+    }
+
+    public void SaveDelete()
+    {
+        PlayerPrefs.DeleteAll();
+    }
+
+    public void test()
+    {
+
+    }
+
+    public void FakeDataPush()
+    {
+        int ID = 1;
+        int TimeMin = 19;
+        int TimeSec = 43;
+        int isBeated = 0;
+        int coin = 1;
+        PlayerPrefs.SetInt(ConstructID(timeMinID, 1, ID), TimeMin);//timeMin
+        PlayerPrefs.SetInt(ConstructID(timeSecID, 2, ID), TimeSec);//timeSec
+        PlayerPrefs.SetInt(ConstructID(CoinID, 3, ID), coin);//Coin
+        PlayerPrefs.SetInt(ConstructID(isBeatenID, 4, ID), isBeated);//isBeaten
+    }
+}
