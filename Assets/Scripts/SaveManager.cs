@@ -120,10 +120,10 @@ public class SaveManager : MonoBehaviour
 
     public void FakeDataPush()
     {
-        int ID = 1;
+        int ID = 19;
         int TimeMin = 19;
         int TimeSec = 43;
-        int isBeated = 0;
+        int isBeated = 1;
         int coin = 1;
         PlayerPrefs.SetInt(ConstructID(timeMinID, 1, ID), TimeMin);//timeMin
         PlayerPrefs.SetInt(ConstructID(timeSecID, 2, ID), TimeSec);//timeSec

@@ -50,6 +50,7 @@ public class buttonpuzzlelights : MonoBehaviour
                 default:
                     break;
             }
+            SoundManager.PlaySound("button");
             startTimer = true;
         }
 

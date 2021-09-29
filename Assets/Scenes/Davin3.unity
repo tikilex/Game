@@ -1425,7 +1425,7 @@ MonoBehaviour:
   _isFinished: 0
   endPanel: {fileID: 0}
   endPanelTimeText: {fileID: 0}
-  levelToLoad: 4
+  levelToLoad: 30
   position: {x: 0, y: 0}
   playerStorage: {fileID: 0}
   WantToShuffle: 1

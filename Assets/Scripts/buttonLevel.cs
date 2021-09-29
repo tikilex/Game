@@ -35,7 +35,7 @@ public class buttonLevel : MonoBehaviour
         }
         else
         {
-             if(isPyat)
+            if(isPyat)
             {
                 TimeText.text="Done";
             }
