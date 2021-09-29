@@ -105,8 +105,7 @@ public class SaveManager : MonoBehaviour
             GlobalValues.RecordMins = 9999999;
             GlobalValues.RecordSecs = 9999999;
         }
-        if (GlobalValues.RecordMins >= GlobalValues.timerMinutes)
-            if (GlobalValues.RecordSecs > GlobalValues.timerSeconds)
+        if ((GlobalValues.RecordMins * 60 + GlobalValues.RecordSecs) > (GlobalValues.timerSeconds + GlobalValues.timerMinutes * 60))
             {   
                 GlobalValues.NewRecord = true;
                 PlayerPrefs.SetInt(ConstructID(timeMinID, 1, GlobalValues.CurrentLvl), GlobalValues.timerMinutes);//timeMin

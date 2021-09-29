@@ -183,6 +183,21 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: buttonLevel, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 2278386112327583880, guid: b06e8fc5da091de4fb0eebc88c4fd025,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 2278386112327583880, guid: b06e8fc5da091de4fb0eebc88c4fd025,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -35.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3154216805842024816, guid: b06e8fc5da091de4fb0eebc88c4fd025,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4091164439640267384, guid: b06e8fc5da091de4fb0eebc88c4fd025,
         type: 3}
       propertyPath: CoinN
@@ -203,10 +218,30 @@ PrefabInstance:
       propertyPath: buttonItselfBut
       value: 
       objectReference: {fileID: 1520325688978419137}
+    - target: {fileID: 4928613812007255746, guid: b06e8fc5da091de4fb0eebc88c4fd025,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4944106889407523322, guid: b06e8fc5da091de4fb0eebc88c4fd025,
         type: 3}
       propertyPath: m_Text
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739120679393195086, guid: b06e8fc5da091de4fb0eebc88c4fd025,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 1.3999653
+      objectReference: {fileID: 0}
+    - target: {fileID: 7739120679393195086, guid: b06e8fc5da091de4fb0eebc88c4fd025,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -35.300003
+      objectReference: {fileID: 0}
+    - target: {fileID: 8217134002264743500, guid: b06e8fc5da091de4fb0eebc88c4fd025,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b06e8fc5da091de4fb0eebc88c4fd025, type: 3}
