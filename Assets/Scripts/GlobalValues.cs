@@ -30,6 +30,8 @@ public class GlobalValues : MonoBehaviour
     public static int nextLevel = 0;
     public static bool PuzzleFinished = false;
     public static int deathCause = 0;//0 ничего 1 падение в воду 2 Шипы 3 неправильный код 3 раза 4 пилы
+    public static bool isDavin=false;
+    public static bool isDone=false;
     public static void Reset()
     {   
         NewRecord = false;
@@ -50,5 +52,6 @@ public class GlobalValues : MonoBehaviour
         UIstateGameplay = true;
         UIstateDeath = false;
         levelCompleted = false;
+        isDavin=false;
     }
 }

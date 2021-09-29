@@ -23,16 +23,24 @@ public class buttonLevel : MonoBehaviour
     private string timeSecID = "timeSec";
     private string CoinID = "coin";
     private string isBeatenID = "coin";
+    public bool isPyat=false;
     void Start()
     {
         ChkSave(realID);
         ButtonID.text = realID.ToString();
+       
         if (prevIsbeated == 0)
         {
             buttonItselfBut.interactable = false;
         }
         else
         {
+             if(isPyat)
+            {
+                TimeText.text="Done";
+            }
+            else
+            {
             if (TimeMin == 0 && TimeSec == 0)
                 TimeText.text = "--:--";
             else
@@ -41,6 +49,7 @@ public class buttonLevel : MonoBehaviour
                 CoinY.SetActive(true);
             else
                 CoinN.SetActive(true);
+            }
         }
     }
 

@@ -3186,7 +3186,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b8bc2ef388e3324eb72051265c648ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 6.5
+  speed: 5.8
   waypoints:
   - {fileID: 354726189}
   PlayerMech: 1

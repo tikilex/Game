@@ -24,6 +24,7 @@ public class PyatScript : MonoBehaviour
         _camera = Camera.main;
         if (WantToShuffle)
             Shuffle();
+        GlobalValues.isDavin=true;
     }
 
 
@@ -68,7 +69,6 @@ public class PyatScript : MonoBehaviour
                 var a = GetComponent<TimerScript>();
                 a.StopTimer();
                 endPanelTimeText.text = (a.minutes < 10 ? "0" : "") + a.minutes + ":" + (a.seconds < 10 ? "0" : "") + a.seconds;
-                GlobalValues.canMove = true;
                 GlobalValues.canvasStatus = true;
             }
 

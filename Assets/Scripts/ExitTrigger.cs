@@ -20,6 +20,10 @@ public class ExitTrigger : MonoBehaviour
 
     private void Start()
     {
+        if (GlobalValues.isDavin){
+    GlobalValues.timerMinutes = PlayerPrefs.GetInt("DavinMin");
+    GlobalValues.timerSeconds = PlayerPrefs.GetInt("DavinSec");
+}
         animator = GetComponent<Animator>();
         GlobalValues.nextLevel = levelToLoad;
         GlobalValues.CurrentLvl = CurrentLvl;

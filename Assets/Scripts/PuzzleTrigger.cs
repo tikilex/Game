@@ -23,6 +23,10 @@ public class PuzzleTrigger : MonoBehaviour
             SceneManager.LoadSceneAsync(levelToLoad, LoadSceneMode.Additive);
             GlobalValues.canMove = false;
             Canvas.SetActive(false);
+            if (GlobalValues.isDavin){
+    PlayerPrefs.SetInt("DavinMins",GlobalValues.timerMinutes);
+    PlayerPrefs.SetInt("DavinSecs",GlobalValues.timerSeconds);
+}
         }
     }
     public void FixedUpdate()

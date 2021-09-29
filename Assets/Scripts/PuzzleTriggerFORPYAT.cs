@@ -14,6 +14,7 @@ public class PuzzleTriggerFORPYAT : MonoBehaviour
     public int levelToLoad;
     public GameObject Canvas;
     public string Code;
+    public bool isDavin;
     
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -21,10 +22,13 @@ public class PuzzleTriggerFORPYAT : MonoBehaviour
         GlobalValues.rightCodeSequence=Code;
         if(other.tag == "Player")
         {   
+            if(isDavin)
+            GlobalValues.isDavin=true;
             GlobalValues.canvasStatus=false;
             SceneManager.LoadSceneAsync(levelToLoad);
             _isFinished=true;
-             GlobalValues.canMove=false; 
+             Canvas.SetActive(false);
+        
         }
     }
     public void FixedUpdate()

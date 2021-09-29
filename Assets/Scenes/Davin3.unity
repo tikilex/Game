@@ -1591,6 +1591,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 921341958028744555, guid: 7187c689b2ed8ad4da81cf09052382c8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2592761501139045942, guid: 7187c689b2ed8ad4da81cf09052382c8,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4874119024744983695, guid: 7187c689b2ed8ad4da81cf09052382c8,
         type: 3}
       propertyPath: isPuzzle
