@@ -17,6 +17,11 @@ public class PuzzleTriggerFORPYAT : MonoBehaviour
     public bool isDavin;
     
 
+    void Start()
+    {
+        GlobalValues.canvasStatus = true;
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         GlobalValues.rightCodeSequence=Code;
