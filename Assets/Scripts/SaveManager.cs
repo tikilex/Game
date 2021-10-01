@@ -158,6 +158,7 @@ public class SaveManager : MonoBehaviour
             PlayerPrefs.SetFloat("PlayerVolume", 10F);
             PlayerPrefs.SetFloat("WorldVolume", 10F);
             PlayerPrefs.SetInt(ConstructID(isBeatenID, 4, 0), 1);//isBeaten
+            GlobalValues.pressCounter = 0;
             SceneManager.LoadScene(0);
         }
         else
@@ -171,7 +172,7 @@ public class SaveManager : MonoBehaviour
         }
     }
     public void resetResetCounter(){
-        GlobalValues.pressCounter = -1;
+        GlobalValues.pressCounter = 0;
         warning.SetActive(false);
         resetResetButton.SetActive(false);
         ResetButton.SetActive(true);

@@ -51,6 +51,7 @@ public class SoundManager : MonoBehaviour
         if (soundCount > 2)
             PlaySound("step1");
         PlayerPrefs.SetFloat("PlayerVolume", playerVolume.value);
+        GlobalValues.playerVolume = PlayerPrefs.GetFloat("PlayerVolume",10F);
         Debug.Log(playerSrc.volume);
         soundCount++;
     }
@@ -62,6 +63,7 @@ public class SoundManager : MonoBehaviour
         if (soundCount > 2)
             PlaySound("coin");
         PlayerPrefs.SetFloat("WorldVolume", worldVolume.value);
+        GlobalValues.worldVolume = PlayerPrefs.GetFloat("WorldVolume",10F);
         Debug.Log(worldSrc.volume);
         soundCount++;
     }

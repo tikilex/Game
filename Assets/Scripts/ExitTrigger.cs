@@ -55,6 +55,7 @@ public class ExitTrigger : MonoBehaviour
         {
             clockPulse = 0;
             GlobalValues.timerSeconds++;
+            Debug.Log((GlobalValues.timerMinutes < 10 ? "0" : "") + GlobalValues.timerMinutes + ":" + (GlobalValues.timerSeconds < 10 ? "0" : "") + GlobalValues.timerSeconds);
             if (GlobalValues.timerSeconds > 59)
             {
                 GlobalValues.timerMinutes++;
@@ -63,7 +64,7 @@ public class ExitTrigger : MonoBehaviour
             //Debug.Log(GlobalValues.timerMinutes + ":" + GlobalValues.timerSeconds);
         }
         clockPulse++;
-        Debug.Log((GlobalValues.timerMinutes < 10 ? "0" : "") + GlobalValues.timerMinutes + ":" + (GlobalValues.timerSeconds < 10 ? "0" : "") + GlobalValues.timerSeconds);
+        
     }
     IEnumerator LoadingScreenOnFade()
     {

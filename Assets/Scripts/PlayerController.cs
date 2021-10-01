@@ -35,15 +35,19 @@ public class PlayerController : MonoBehaviour
         transform.position = pos.initValue;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
-        GlobalValues.playerVolume = PlayerPrefs.GetFloat("PlayerVolume",10);
-        GlobalValues.worldVolume = PlayerPrefs.GetFloat("WorldVolume",10);
+        GlobalValues.playerVolume = PlayerPrefs.GetFloat("PlayerVolume",10F);
+        GlobalValues.worldVolume = PlayerPrefs.GetFloat("WorldVolume",10F);
         SoundManager.worldSrc.volume = GlobalValues.worldVolume * 0.1F;
         SoundManager.playerSrc.volume = GlobalValues.playerVolume * 0.1F;
+        Debug.Log(SoundManager.worldSrc.volume + " " + SoundManager.playerSrc.volume);
     }
 
     private void FixedUpdate()
-    {
-
+    {   
+        GlobalValues.playerVolume = PlayerPrefs.GetFloat("PlayerVolume",10F);
+        GlobalValues.worldVolume = PlayerPrefs.GetFloat("WorldVolume",10F);
+        SoundManager.worldSrc.volume = GlobalValues.worldVolume * 0.1F;
+        SoundManager.playerSrc.volume = GlobalValues.playerVolume * 0.1F;
         moveInput = joystick.Horizontal;
         moveInputKeyboard = Input.GetAxis("Horizontal");//Прекрепил W/A и горизантальные стрелки через юнити
         if(!GlobalValues.UIstateGameplay){
