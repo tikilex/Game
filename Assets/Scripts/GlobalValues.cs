@@ -13,7 +13,6 @@ public class GlobalValues : MonoBehaviour
     public static bool UIstateDeath = false;
     public static int currentPuzzle;
     public static int CurrentLvl;
-
     public static bool NewRecord = false;
     public static int RecordSecs;
     public static int RecordMins;
@@ -23,7 +22,10 @@ public class GlobalValues : MonoBehaviour
     public static bool buttonState2 = true;
     public static bool buttonState3 = true;
     public static bool buttonState4 = true;
+    public static float playerVolume;
+    public static float worldVolume;
     public static bool TimerOn = true;
+    public static int pressCounter = 0;
     public static bool coinTaken = false;
     public static int timerSeconds = 0;
     public static int timerMinutes = 0;
@@ -53,5 +55,6 @@ public class GlobalValues : MonoBehaviour
         UIstateDeath = false;
         levelCompleted = false;
         isDavin=false;
+        pressCounter = 0;
     }
 }

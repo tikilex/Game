@@ -35,6 +35,10 @@ public class PlayerController : MonoBehaviour
         transform.position = pos.initValue;
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+        GlobalValues.playerVolume = PlayerPrefs.GetFloat("PlayerVolume",10);
+        GlobalValues.worldVolume = PlayerPrefs.GetFloat("WorldVolume",10);
+        SoundManager.worldSrc.volume = GlobalValues.worldVolume * 0.1F;
+        SoundManager.playerSrc.volume = GlobalValues.playerVolume * 0.1F;
     }
 
     private void FixedUpdate()

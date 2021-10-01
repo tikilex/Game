@@ -24,7 +24,7 @@ public class buttonLevel : MonoBehaviour
     private string CoinID = "coin";
     private string isBeatenID = "coin";
     public bool isPyat=false;
-    void Start()
+    public void Start()
     {
         ChkSave(realID);
         ButtonID.text = realID.ToString();

@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
@@ -19,10 +20,11 @@ public class SoundManager : MonoBehaviour
     public static AudioSource playerSrc;
     public static AudioSource musicSrc;
     public static AudioSource worldSrc;
-    public int playerSoundsVolume;
+    public int playerSoundsVolume = 10;
     public int otherSoundsVolume;
     public int musicVolume;
-
+    public Slider playerVolume;
+    public Slider worldVolume;
     void Start()
     {
         death = Resources.Load<AudioClip>("death");
@@ -41,88 +43,36 @@ public class SoundManager : MonoBehaviour
         musicSrc = gameObject.AddComponent<AudioSource>();
         worldSrc = gameObject.AddComponent<AudioSource>();
     }
-
-    public static void volumeUpdate(int playerSoundsVolume, int otherSoundsVolume, int musicVolume)
+    private int soundCount = 0;
+    public void updatePlayerVolume()
     {
-        //перевод нормального флоата в F вариант
-        switch (playerSoundsVolume)
-        {
-            case 0:
-                playerSrc.volume = 0f;
-                break;
-            case 2:
-                playerSrc.volume = 0.2f;
-                break;
-            case 4:
-                playerSrc.volume = 0.4f;
-                break;
-            case 6:
-                playerSrc.volume = 0.6f;
-                break;
-            case 8:
-                playerSrc.volume = 0.8f;
-                break;
-            case 10:
-                playerSrc.volume = 1.0f;
-                break;
-            default:
-                playerSrc.volume = 1.0f;
-                break;
-        }
-        switch (musicVolume)
-        {
-            case 0:
-                musicSrc.volume = 0f;
-                break;
-            case 2:
-                musicSrc.volume = 0.2f;
-                break;
-            case 4:
-                musicSrc.volume = 0.4f;
-                break;
-            case 6:
-                musicSrc.volume = 0.6f;
-                break;
-            case 8:
-                musicSrc.volume = 0.8f;
-                break;
-            case 10:
-                musicSrc.volume = 1.0f;
-                break;
-            default:
-                musicSrc.volume = 1.0f;
-                break;
-        }
-        switch (otherSoundsVolume)
-        {
-            case 0:
-                worldSrc.volume = 0f;
-                break;
-            case 2:
-                worldSrc.volume = 0.2f;
-                break;
-            case 4:
-                worldSrc.volume = 0.4f;
-                break;
-            case 6:
-                worldSrc.volume = 0.6f;
-                break;
-            case 8:
-                worldSrc.volume = 0.8f;
-                break;
-            case 10:
-                worldSrc.volume = 1.0f;
-                break;
-            default:
-                worldSrc.volume = 1.0f;
-                break;
-        }
+        float f = 0.1F * playerVolume.value;
+        playerSrc.volume = f;
+        if (soundCount > 2)
+            PlaySound("step1");
+        PlayerPrefs.SetFloat("PlayerVolume", playerVolume.value);
+        Debug.Log(playerSrc.volume);
+        soundCount++;
     }
 
-    void FixedUpdate()
+    public void updateWorldVolume()
     {
-        volumeUpdate(playerSoundsVolume, otherSoundsVolume, musicVolume);
+        float f = 0.1F * worldVolume.value;
+        worldSrc.volume = f;
+        if (soundCount > 2)
+            PlaySound("coin");
+        PlayerPrefs.SetFloat("WorldVolume", worldVolume.value);
+        Debug.Log(worldSrc.volume);
+        soundCount++;
     }
+
+    void start()
+    {
+
+
+    }
+
+
     public static void PlaySound(string clip)
     {
         switch (clip)
@@ -165,7 +115,7 @@ public class SoundManager : MonoBehaviour
                 worldSrc.PlayOneShot(button, 0.5F);
                 break;
             default:
-                Debug.Log("Ошибка загрузки звука!");
+                Debug.Log("Sound ERROR");
                 break;
         }
     }

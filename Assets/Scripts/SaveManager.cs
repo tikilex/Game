@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SaveManager : MonoBehaviour
 {
@@ -18,6 +20,12 @@ public class SaveManager : MonoBehaviour
     private static string timeSecID = "timeSec";
     private static string CoinID = "coin";
     private static string isBeatenID = "coin";
+    public bool isHold = false;
+    [SerializeField] private Text ResetButtonText;
+    public GameObject warning;
+    public GameObject resetResetButton;
+    public GameObject ResetButton;
+
 
     private static string ConstructID(string Name, int type, int ID)
     {//1 timeMin 2 timeSec 3 Coin 4 isBeated
@@ -101,21 +109,22 @@ public class SaveManager : MonoBehaviour
     {
         GlobalValues.RecordMins = PlayerPrefs.GetInt(ConstructID(timeMinID, 1, GlobalValues.CurrentLvl), 9999999);
         GlobalValues.RecordSecs = PlayerPrefs.GetInt(ConstructID(timeSecID, 2, GlobalValues.CurrentLvl), 9999999);
-        if(GlobalValues.RecordMins == 0 && GlobalValues.RecordSecs == 0){
+        if (GlobalValues.RecordMins == 0 && GlobalValues.RecordSecs == 0)
+        {
             GlobalValues.RecordMins = 9999999;
             GlobalValues.RecordSecs = 9999999;
         }
         if ((GlobalValues.RecordMins * 60 + GlobalValues.RecordSecs) > (GlobalValues.timerSeconds + GlobalValues.timerMinutes * 60))
-            {   
-                GlobalValues.NewRecord = true;
-                PlayerPrefs.SetInt(ConstructID(timeMinID, 1, GlobalValues.CurrentLvl), GlobalValues.timerMinutes);//timeMin
-                PlayerPrefs.SetInt(ConstructID(timeSecID, 2, GlobalValues.CurrentLvl), GlobalValues.timerSeconds);//timeSec
-            }
+        {
+            GlobalValues.NewRecord = true;
+            PlayerPrefs.SetInt(ConstructID(timeMinID, 1, GlobalValues.CurrentLvl), GlobalValues.timerMinutes);//timeMin
+            PlayerPrefs.SetInt(ConstructID(timeSecID, 2, GlobalValues.CurrentLvl), GlobalValues.timerSeconds);//timeSec
+        }
         if (GlobalValues.coinTaken)
             PlayerPrefs.SetInt(ConstructID(CoinID, 3, GlobalValues.CurrentLvl), 1);//Coin
         else
             PlayerPrefs.SetInt(ConstructID(CoinID, 3, GlobalValues.CurrentLvl), 0);//Coin
-            PlayerPrefs.SetInt(ConstructID(isBeatenID, 4, GlobalValues.CurrentLvl), 1);//isBeaten
+        PlayerPrefs.SetInt(ConstructID(isBeatenID, 4, GlobalValues.CurrentLvl), 1);//isBeaten
     }
 
     public void FakeDataPush()
@@ -131,4 +140,41 @@ public class SaveManager : MonoBehaviour
         PlayerPrefs.SetInt(ConstructID(isBeatenID, 4, ID), isBeated);//isBeaten
     }
 
+    public void ResetSave()
+    {
+        if (GlobalValues.pressCounter == 10)
+        {
+            PlayerPrefs.DeleteAll();
+            Debug.Log("Save Reset");
+            for (int i = -1; i <= 19; i++)
+            {
+                int j = i + 1;
+                PlayerPrefs.SetInt(ConstructID(timeMinID, 1, j), 0);//timeMin
+                PlayerPrefs.SetInt(ConstructID(timeSecID, 2, j), 0);//timeSec
+                PlayerPrefs.SetInt(ConstructID(CoinID, 3, j), 0);//Coin
+                PlayerPrefs.SetInt(ConstructID(isBeatenID, 4, j), 0);//isBeaten
+            }
+            PlayerPrefs.SetInt("SaveCreated", 1);
+            PlayerPrefs.SetFloat("PlayerVolume", 10F);
+            PlayerPrefs.SetFloat("WorldVolume", 10F);
+            PlayerPrefs.SetInt(ConstructID(isBeatenID, 4, 0), 1);//isBeaten
+            SceneManager.LoadScene(0);
+        }
+        else
+            GlobalValues.pressCounter++;
+        if (GlobalValues.pressCounter > 0){
+            warning.SetActive(true);
+            resetResetButton.SetActive(true);
+            ResetButton.SetActive(false);
+            int countdown = 10-GlobalValues.pressCounter+1;
+            ResetButtonText.text = "Presses untill your progress reset : " + countdown;
+        }
+    }
+    public void resetResetCounter(){
+        GlobalValues.pressCounter = -1;
+        warning.SetActive(false);
+        resetResetButton.SetActive(false);
+        ResetButton.SetActive(true);
+    }
 }
+
