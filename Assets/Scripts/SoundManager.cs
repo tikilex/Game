@@ -17,6 +17,7 @@ public class SoundManager : MonoBehaviour
     public static AudioClip coin;
     public static AudioClip boom;
     public static AudioClip button;
+    public static AudioClip gem;
     public static AudioSource playerSrc;
     public static AudioSource musicSrc;
     public static AudioSource worldSrc;
@@ -27,6 +28,7 @@ public class SoundManager : MonoBehaviour
     public Slider worldVolume;
     void Start()
     {
+        gem = Resources.Load<AudioClip>("gem");
         death = Resources.Load<AudioClip>("death");
         door = Resources.Load<AudioClip>("door");
         step1 = Resources.Load<AudioClip>("step1");
@@ -51,7 +53,7 @@ public class SoundManager : MonoBehaviour
         if (soundCount > 2)
             PlaySound("step1");
         PlayerPrefs.SetFloat("PlayerVolume", playerVolume.value);
-        GlobalValues.playerVolume = PlayerPrefs.GetFloat("PlayerVolume",10F);
+        GlobalValues.playerVolume = PlayerPrefs.GetFloat("PlayerVolume", 10F);
         Debug.Log(playerSrc.volume);
         soundCount++;
     }
@@ -63,7 +65,7 @@ public class SoundManager : MonoBehaviour
         if (soundCount > 2)
             PlaySound("coin");
         PlayerPrefs.SetFloat("WorldVolume", worldVolume.value);
-        GlobalValues.worldVolume = PlayerPrefs.GetFloat("WorldVolume",10F);
+        GlobalValues.worldVolume = PlayerPrefs.GetFloat("WorldVolume", 10F);
         Debug.Log(worldSrc.volume);
         soundCount++;
     }
@@ -115,6 +117,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case "button":
                 worldSrc.PlayOneShot(button, 0.5F);
+                break;
+            case "gem":
+                worldSrc.PlayOneShot(gem);
                 break;
             default:
                 Debug.Log("Sound ERROR");

@@ -4618,6 +4618,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9105128496476785414, guid: 84bf5c0b0f2706f40ae6d8a501336321,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 10.709489
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105128496476785414, guid: 84bf5c0b0f2706f40ae6d8a501336321,
+        type: 3}
+      propertyPath: m_Offset.x
+      value: 0.2494877
+      objectReference: {fileID: 0}
+    - target: {fileID: 9105128496476785414, guid: 84bf5c0b0f2706f40ae6d8a501336321,
+        type: 3}
+      propertyPath: m_Offset.y
+      value: 3.3360133
+      objectReference: {fileID: 0}
     - target: {fileID: 9105128496476785417, guid: 84bf5c0b0f2706f40ae6d8a501336321,
         type: 3}
       propertyPath: slider
@@ -4631,7 +4646,7 @@ PrefabInstance:
     - target: {fileID: 9105128496476785417, guid: 84bf5c0b0f2706f40ae6d8a501336321,
         type: 3}
       propertyPath: levelToLoad
-      value: 30
+      value: 32
       objectReference: {fileID: 0}
     - target: {fileID: 9105128496476785417, guid: 84bf5c0b0f2706f40ae6d8a501336321,
         type: 3}

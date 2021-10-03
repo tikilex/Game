@@ -77,6 +77,8 @@ public class SaveManager : MonoBehaviour
             PlayerPrefs.SetInt(ConstructID(isBeatenID, 4, j), 1);//isBeaten
         }
         PlayerPrefs.SetInt("SaveCreated", 1);
+        PlayerPrefs.SetInt("GameCompleted",1);
+        SceneManager.LoadScene(0);
     }
 
     public void DumpSave()

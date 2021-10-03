@@ -178,7 +178,11 @@ public class PlayerController : MonoBehaviour
         if (col.transform.tag == "physicbox") //убираем у персонажа скорость блока
             transform.parent = null;
     }
-
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.tag == "wingem"){
+            animator.SetBool("wingem", true);
+        }
+    }
 
 
     IEnumerator StepSound()

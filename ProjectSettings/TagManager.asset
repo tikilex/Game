@@ -12,6 +12,7 @@ TagManager:
   - SpawnPhysicbox
   - Ground
   - Thorn
+  - wingem
   layers:
   - Default
   - TransparentFX
