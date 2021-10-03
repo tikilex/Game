@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public GameObject completed;
+    public GameObject backgroundComp;
     public static void PlayGame(int Level)
     {   
         GlobalValues.Reset();
@@ -14,8 +15,10 @@ public class MainMenu : MonoBehaviour
 
     void Start(){
         SaveManager.InitialSave();
-        if(PlayerPrefs.GetInt("GameCompleted",0)==1)
+        if(PlayerPrefs.GetInt("GameCompleted",0)==1){
             completed.SetActive(true);
+            backgroundComp.SetActive(true);
+        }
     }
 
     public void ExitGame()
