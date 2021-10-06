@@ -870,6 +870,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &598020323 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3412656427990461730, guid: d76b0ac7564e611459af8a8682c85c34,
+    type: 3}
+  m_PrefabInstance: {fileID: 2967236110369273789}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 325ccbc4d5dc11545a6b5e91ceb29266, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &620388912
 GameObject:
   m_ObjectHideFlags: 0
@@ -3965,6 +3977,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69deb02d27b12194a9faf2e876f3947a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  completed: {fileID: 0}
+  backgroundComp: {fileID: 0}
 --- !u!114 &1720679637104783793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5138,6 +5152,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69deb02d27b12194a9faf2e876f3947a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  completed: {fileID: 0}
+  backgroundComp: {fileID: 0}
 --- !u!1 &4518262845944689488
 GameObject:
   m_ObjectHideFlags: 0
@@ -5649,6 +5665,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69deb02d27b12194a9faf2e876f3947a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  completed: {fileID: 0}
+  backgroundComp: {fileID: 0}
 --- !u!222 &5647805003862251776
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -5718,6 +5736,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69deb02d27b12194a9faf2e876f3947a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  completed: {fileID: 0}
+  backgroundComp: {fileID: 0}
 --- !u!224 &5747110680760353816
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6208,7 +6228,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 598020323}
         m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
         m_MethodName: OnJumpButtonDown
         m_Mode: 1
@@ -6707,7 +6727,7 @@ PrefabInstance:
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -47.153408
+      value: -48.372486
       objectReference: {fileID: 0}
     - target: {fileID: 6669485753614273929, guid: b80031610f5f42842b96b429601f52eb,
         type: 3}

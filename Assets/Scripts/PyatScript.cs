@@ -70,6 +70,7 @@ public class PyatScript : MonoBehaviour
                 a.StopTimer();
                 endPanelTimeText.text = (a.minutes < 10 ? "0" : "") + a.minutes + ":" + (a.seconds < 10 ? "0" : "") + a.seconds;
                 GlobalValues.canvasStatus = true;
+                GlobalValues.canMove = true;
             }
 
         }
