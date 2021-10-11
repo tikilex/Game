@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public float jumpForce;
-    private float moveInput;
+    public static float moveInput;
     private float moveInputKeyboard;
 
     public Joystick joystick;

@@ -12,21 +12,27 @@ public class PuzzleTrigger : MonoBehaviour
     public int levelToLoad;
     public GameObject Canvas;
     public string Code;
+    private bool isFinished = false;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        GlobalValues.currentPuzzle = levelToLoad;
-        GlobalValues.rightCodeSequence = Code;
-        if (other.tag == "Player")
+        if (!isFinished)
         {
-            SoundManager.PlaySound("door");
-            GlobalValues.canvasStatus = false;
-            SceneManager.LoadSceneAsync(levelToLoad, LoadSceneMode.Additive);
-            GlobalValues.canMove = false;
-            Canvas.SetActive(false);
-            if (GlobalValues.isDavin){
-    PlayerPrefs.SetInt("DavinMins",GlobalValues.timerMinutes);
-    PlayerPrefs.SetInt("DavinSecs",GlobalValues.timerSeconds);
-}
+            GlobalValues.currentPuzzle = levelToLoad;
+            GlobalValues.rightCodeSequence = Code;
+            if (other.tag == "Player")
+            {
+                SoundManager.PlaySound("door");
+                GlobalValues.canvasStatus = false;
+                SceneManager.LoadSceneAsync(levelToLoad, LoadSceneMode.Additive);
+                GlobalValues.canMove = false;
+                Canvas.SetActive(false);
+                if (GlobalValues.isDavin)
+                {
+                    PlayerPrefs.SetInt("DavinMins", GlobalValues.timerMinutes);
+                    PlayerPrefs.SetInt("DavinSecs", GlobalValues.timerSeconds);
+                }
+            }
+            isFinished = true;
         }
     }
     public void FixedUpdate()
@@ -39,5 +45,6 @@ public class PuzzleTrigger : MonoBehaviour
             ani.SetTrigger("isTriggered");
         }
     }
+
 }
 
