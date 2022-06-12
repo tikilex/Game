@@ -9,16 +9,30 @@ public class UIstater : MonoBehaviour
     public bool isPuzzle = false;
     // Start is called before the first frame update
     public GameObject Joystick;
+    public GameObject JoystickHandle;
     public GameObject JumpButton;
+    public GameObject PauseButton;
     public GameObject TimeDisplay;
     public GameObject MenuButton;//{1 layer}
     public GameObject WinLayer;//{2 layer}
     public GameObject PauseLayer;//{3 layer}
     public GameObject DeathLayer;
+    private bool isPaused = false;
     [SerializeField] private Text DeathText;
     //public GameObject DeathLayer; // заготовка для экрана смерти 
     void Start()
     {
+        if (GlobalValues.isOnPC)
+        {
+            Image toDissable = Joystick.GetComponent<Image>();
+            toDissable.enabled = false;
+            toDissable = JoystickHandle.GetComponent<Image>();
+            toDissable.enabled = false;
+            toDissable = JumpButton.GetComponent<Image>();
+            toDissable.enabled = false;
+            toDissable = PauseButton.GetComponent<Image>();
+            toDissable.enabled = false;
+        }
         if (isPuzzle == false)
         {
             GlobalValues.UIstateDeath = false;
@@ -44,7 +58,7 @@ public class UIstater : MonoBehaviour
     }
     public void PauseLayerCall()
     {
-
+        isPaused = true;
         GlobalValues.canMove = false;
         GlobalValues.UIstateDeath = false;
         GlobalValues.UIstateGameplay = false;
@@ -127,11 +141,13 @@ public class UIstater : MonoBehaviour
             WinLayer.SetActive(false);
             PauseLayer.SetActive(false);
         }
+        isPaused = false;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
+        
         if (GlobalValues.UIstateGameplay && !GlobalValues.UIstateDeath && !GlobalValues.levelCompleted)
         {
             if (isPuzzle == false)
@@ -154,7 +170,8 @@ public class UIstater : MonoBehaviour
             }
         }
 
-        if (!GlobalValues.UIstateGameplay && !GlobalValues.UIstateDeath && GlobalValues.levelCompleted){
+        if (!GlobalValues.UIstateGameplay && !GlobalValues.UIstateDeath && GlobalValues.levelCompleted)
+        {
             WinLayerCall();
         }
 
@@ -165,5 +182,13 @@ public class UIstater : MonoBehaviour
         }
     }
 
-
+    void Update(){
+        if (Input.GetButtonDown("Exit"))
+        {
+            if (isPaused)
+                ClosePause();
+            else
+                PauseLayerCall();
+        }
+    }
 }

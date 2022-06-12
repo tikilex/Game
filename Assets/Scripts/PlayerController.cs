@@ -30,6 +30,7 @@ public class PlayerController : MonoBehaviour
     private int airbornTime = 0;
 
     public int damagingHeight = 0;
+    
     private void Start()
     {
         transform.position = pos.initValue;

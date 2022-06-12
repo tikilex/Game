@@ -601,7 +601,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPuzzle: 0
   Joystick: {fileID: 5728021145740521367}
+  JoystickHandle: {fileID: 5728021146028928109}
   JumpButton: {fileID: 7482958985306976029}
+  PauseButton: {fileID: 9115441749119125194}
   TimeDisplay: {fileID: 1369043901941425385}
   MenuButton: {fileID: 9115441749119125194}
   WinLayer: {fileID: 272551622293858165}
@@ -754,6 +756,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69deb02d27b12194a9faf2e876f3947a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  completed: {fileID: 0}
+  backgroundComp: {fileID: 0}
 --- !u!1 &1199998735551178218
 GameObject:
   m_ObjectHideFlags: 0
@@ -1283,6 +1287,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69deb02d27b12194a9faf2e876f3947a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  completed: {fileID: 0}
+  backgroundComp: {fileID: 0}
 --- !u!1 &2524081112412246301
 GameObject:
   m_ObjectHideFlags: 0
@@ -2841,6 +2847,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69deb02d27b12194a9faf2e876f3947a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  completed: {fileID: 0}
+  backgroundComp: {fileID: 0}
 --- !u!1 &7680416098078089975
 GameObject:
   m_ObjectHideFlags: 0
@@ -3441,6 +3449,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69deb02d27b12194a9faf2e876f3947a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  completed: {fileID: 0}
+  backgroundComp: {fileID: 0}
 --- !u!1 &9176617063059726498
 GameObject:
   m_ObjectHideFlags: 0
@@ -3681,6 +3691,12 @@ PrefabInstance:
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+--- !u!1 &5728021146028928109 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2929252285020697097, guid: aaa2c939c0359ac4dbce3f49e8b90252,
+    type: 3}
+  m_PrefabInstance: {fileID: 7482958984179228260}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5728021145740521366 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252,
